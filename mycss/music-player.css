@@ -1,0 +1,300 @@
+#musicPlayer.music-player {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 12000;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 90px;
+    padding: 10px 25px;
+    color: #fff;
+    background: rgba(15, 15, 15, .95);
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(20px);
+    transform: translateY(100%);
+    transition: transform .4s ease;
+}
+
+#musicPlayer.music-player.active {
+    transform: translateY(0);
+}
+
+#musicPlayer .player-song {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    min-width: 180px;
+}
+
+#musicPlayer .player-song img {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#musicPlayer .player-song h6,
+#musicPlayer .player-song small {
+    display: block;
+    max-width: 180px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#musicPlayer .player-song h6 {
+    font-size: 14px;
+    color: #fff;
+}
+
+#musicPlayer .player-song small {
+    margin-top: 5px;
+    color: #aaa;
+}
+
+#musicPlayer .player-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#musicPlayer button {
+    border: 0;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+}
+
+#musicPlayer .player-controls button {
+    font-size: 19px;
+}
+
+#musicPlayer .player-controls .play-main {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    color: #111;
+    background: #fff;
+}
+
+#musicPlayer .player-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 150px;
+}
+
+#musicPlayer .player-progress span {
+    font-size: 12px;
+    color: #aaa;
+}
+
+#musicPlayer #progressBar {
+    flex: 1;
+    accent-color: #ed1029;
+}
+
+#musicPlayer .player-volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#musicPlayer #volumeBar {
+    width: 80px;
+    accent-color: #ed1029;
+}
+
+#musicPlayer .close-player {
+    font-size: 21px;
+}
+
+/* WaveCraft light theme */
+body.light #musicPlayer.music-player {
+    color: #111;
+    background: rgba(240, 248, 255, .96);
+    border-top-color: rgba(0, 0, 0, .12);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .08);
+}
+
+body.light #musicPlayer .player-song h6 {
+    color: #111;
+}
+
+body.light #musicPlayer .player-song small,
+body.light #musicPlayer .player-progress span {
+    color: black;
+}
+
+body.light #musicPlayer .player-controls button,
+body.light #musicPlayer .close-player {
+    color: #b22222;
+}
+
+body.light #musicPlayer .player-controls button:hover,
+body.light #musicPlayer .close-player:hover {
+    color: #ff3b3b;
+}
+
+body.light #musicPlayer .player-controls .play-main {
+    color: #fff;
+    background: #b22222;
+}
+
+body.light #musicPlayer .player-controls .play-main:hover {
+    color: #fff;
+    background: #ff3b3b;
+}
+
+body.light #musicPlayer #progressBar,
+body.light #musicPlayer #volumeBar {
+    accent-color: #b22222;
+}
+
+body.light #musicPlayer .player-volume i {
+    color: black;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    #musicPlayer.music-player {
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #musicPlayer.music-player {
+        bottom: calc(72px + env(safe-area-inset-bottom));
+        min-height: 68px;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    #musicPlayer .player-song {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+    }
+
+    #musicPlayer .player-song img {
+        width: 48px;
+        height: 48px;
+        margin-right: 8px;
+    }
+
+    #musicPlayer .player-song h6,
+    #musicPlayer .player-song small {
+        max-width: 125px;
+    }
+
+    #musicPlayer .player-controls {
+        gap: 5px;
+    }
+
+    #musicPlayer .player-controls button {
+        padding: 3px;
+        font-size: 18px;
+    }
+
+    #musicPlayer .player-controls .play-main {
+        width: 34px;
+        height: 34px;
+    }
+
+    #musicPlayer .player-progress {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 5px;
+        min-width: 0;
+        height: 12px;
+    }
+
+    #musicPlayer .player-song {
+        max-width: calc(100% - 110px);
+    }
+
+    #musicPlayer .player-progress input {
+        min-width: 0;
+        min-height: 24px;
+    }
+
+    #musicPlayer .player-volume,
+    #musicPlayer .close-player {
+        display: none;
+    }
+
+    #musicPlayer.mobile-expanded {
+        inset: 0;
+        width: 100%;
+        height: 100dvh;
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        background: rgba(8, 8, 8, .98);
+        transform: translateY(0);
+    }
+
+    #musicPlayer.mobile-expanded .player-song {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    #musicPlayer.mobile-expanded .player-song img {
+        width: min(62vw, 240px);
+        height: min(62vw, 240px);
+        margin: 0 auto 16px;
+        border-radius: 18px;
+    }
+
+    #musicPlayer.mobile-expanded .player-song h6,
+    #musicPlayer.mobile-expanded .player-song small {
+        max-width: 100%;
+    }
+
+    #musicPlayer.mobile-expanded .player-controls {
+        justify-content: center;
+        gap: 28px;
+        margin: 18px 0 12px;
+    }
+
+    #musicPlayer.mobile-expanded .player-controls button {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    #musicPlayer.mobile-expanded .player-controls .play-main {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+
+    #musicPlayer.mobile-expanded .player-progress {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #musicPlayer.mobile-expanded .player-volume {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #musicPlayer.mobile-expanded .close-player {
+        display: flex;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+    }
+}

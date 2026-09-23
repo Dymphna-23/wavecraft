@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Playing | WaveCraft</title>
+    <link rel="icon" href="img/som-choice.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="mycss/music-player.css">
+    <link rel="stylesheet" href="mycss/now-playing.css">
+</head>
+<body class="now-playing-page">
+    <main class="now-playing-shell">
+        <header class="now-playing-topbar">
+            <button id="backButton" type="button" aria-label="Go back"><i class="ri-arrow-left-line"></i><span>Back</span></button>
+            <a class="now-playing-logo" href="index.html">WAVE<span>CRAFT</span></a>
+            <div class="now-playing-actions">
+                <span class="now-playing-status">NOW PLAYING</span>
+                <button id="nowThemeButton" class="now-theme-button" type="button" aria-label="Switch to light mode" title="Switch theme"><i class="ri-moon-line"></i></button>
+            </div>
+        </header>
+
+        <section class="lyrics-panel" aria-labelledby="lyricsHeading">
+            <div class="section-kicker"><span class="wave-mark" aria-hidden="true"></span><span id="lyricsHeading">Lyrics</span></div>
+            <div id="lyricsList" class="lyrics-list" aria-live="polite"></div>
+        </section>
+
+        <section class="video-panel" aria-label="Music video">
+            <div id="videoStage" class="video-stage"></div>
+        </section>
+
+        <section class="song-info" aria-live="polite">
+            <img id="nowPlayingImage" src="" alt="Album artwork">
+            <div><span id="nowPlayingAlbum" class="song-album">WAVECRAFT</span><h1 id="nowPlayingTitle">No song playing</h1><p id="nowPlayingArtist">Choose a song to begin</p></div>
+        </section>
+
+        <section class="now-controls" aria-label="Player controls">
+            <div class="waveform" id="waveform" aria-hidden="true"></div>
+            <div class="control-row">
+                <button id="previousButton" type="button" aria-label="Previous song"><i class="ri-skip-back-fill"></i></button>
+                <button id="playButton" class="now-play-button" type="button" aria-label="Play or pause"><i class="ri-play-fill"></i></button>
+                <button id="nextButton" type="button" aria-label="Next song"><i class="ri-skip-forward-fill"></i></button>
+            </div>
+            <div class="seek-row"><span id="nowCurrentTime">0:00</span><input id="nowProgress" type="range" min="0" max="100" value="0" aria-label="Song progress"><span id="nowDuration">0:00</span></div>
+            <label class="volume-row"><i class="ri-volume-up-line" aria-hidden="true"></i><input id="nowVolume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></label>
+        </section>
+    </main>
+    <script src="myjs/music-player.js"></script>
+    <script src="myjs/now-playing.js"></script>
+</body>
+</html>

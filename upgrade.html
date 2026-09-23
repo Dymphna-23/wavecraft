@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade</title>
+    <link rel="icon" href="img/som-choice.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="mycss/upgrade.css">
+    <link rel="stylesheet" href="mycss/music-player.css">
+</head>
+<body>
+
+        <!-- scroll progress bar -->
+        <div class="progress-bar">
+        </div>
+        <!-- end of progress bar -->
+
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <button id="menuBtn">
+                    ☰
+                </button>
+
+                <div class="nav-logo">
+                    <img id="sidebarLogo" src="img/nav-logo-removebg-preview (1).png" alt="WaveCraft logo">
+                </div>
+
+            </div>
+
+            <div class="sidebar-content">
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="genre.html">
+                            <i class="fa-regular fa-compass"></i>
+                            <span>Genres</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="library.html">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <span>Library</span>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="upgrade.html">
+                            <i class="fa-regular fa-circle-play"></i>
+                            <span>Upgrade</span>
+                        </a>
+                    </li>
+ 
+                    <li>
+                        <a href="settings.html">
+                            <i class="ri-settings-5-line"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <button class="playlist-btn">
+                    <a href="playlist.html"><i class="fa-solid fa-plus"></i>
+                    Playlist
+                </a>
+                </button>
+
+                <div class="playlists">
+
+                    <div class="playlist">
+                        <a href="liked.html"><i class="ri-heart-3-fill"></i>
+                            <h4>Liked Music</h4>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Main Area -->
+        <div class="main-area" id="mainArea">
+
+            <!-- Top Navbar -->
+            <nav>
+
+                <div class="nav-brand" id="navLogoHost"></div>
+
+                <div class="right-side">
+
+                    <a href="signup.html" id="authLink">
+                        <span id="authText">Sign Up</span>
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+
+                    <!-- USER PROFILE -->
+    <div class="user-profile" id="userProfile">
+
+        <span id="userInitials"></span>
+
+    </div>
+
+                    <button id="themeBtn">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                </div>
+
+            </nav>
+            <!-- end of nav bar -->
+
+
+<!-- PREMIUM HERO -->
+
+<section class="premium-hero">
+
+    <div class="premium-hero-overlay"></div>
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- HERO CONTENT -->
+
+            <div class="col-lg-6">
+
+                <div class="premium-hero-content">
+
+                    <span class="premium-label">
+
+                        WAVECRAFT PREMIUM
+
+                    </span>
+
+
+                    <h1>
+
+                        Music.
+                        <span>Without Limits.</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Unlock the complete WaveCraft
+                        listening experience with
+                        uninterrupted music, offline
+                        listening and more control
+                        over your music.
+
+                    </p>
+
+
+                    <div class="premium-hero-actions">
+
+                        <a
+                            href="#plans"
+                            class="premium-primary-btn">
+
+                            Upgrade to Premium
+
+                        </a>
+
+
+                        <a
+                            href="#benefits"
+                            class="premium-secondary-btn">
+
+                            Explore Premium
+
+                            <i class="ri-arrow-down-line"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="premium-hero-note">
+
+                        <span>
+                            <i class="ri-check-line"></i>
+                            Cancel anytime
+                        </span>
+
+                        <span>
+                            <i class="ri-check-line"></i>
+                            No hidden fees
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO PLAYER -->
+
+            <div class="col-lg-6">
+
+                <div class="premium-player-wrapper">
+
+                    <div class="premium-player-glow"></div>
+
+
+                    <div class="premium-player">
+
+                        <div class="premium-player-header">
+
+                            <span>
+                                NOW PLAYING
+                            </span>
+
+                            <i class="ri-more-fill"></i>
+
+                        </div>
+
+
+                        <div class="premium-album-art">
+
+                            <img
+                                src="img/last-last.jpg"
+                                alt="Now playing">
+
+                            <div class="premium-art-overlay">
+
+                                <i class="ri-play-fill"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="premium-song-info">
+
+                            <h3>
+                                Last Last
+                            </h3>
+
+                            <p>
+                                Burna Boy
+                            </p>
+
+                        </div>
+
+
+                        <div class="premium-progress">
+
+                            <div class="premium-progress-bar">
+
+                                <span></span>
+
+                            </div>
+
+                            <div class="premium-progress-time">
+
+                                <span>1:42</span>
+
+                                <span>2:52</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="premium-player-controls">
+
+                            <button>
+                                <i class="ri-skip-back-fill"></i>
+                            </button>
+
+                            <button class="premium-play-button">
+
+                                <i class="ri-play-fill"></i>
+
+                            </button>
+
+                            <button>
+                                <i class="ri-skip-forward-fill"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PREMIUM BENEFITS
+========================================================= -->
+
+<section class="premium-benefits" id="benefits">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>
+                THE PREMIUM EXPERIENCE
+            </span>
+
+            <h2>
+                Everything you love.
+                <strong>Upgraded.</strong>
+            </h2>
+
+            <p>
+                Premium gives you more freedom,
+                more control and a better way
+                to experience your music.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- AD FREE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a
+                    href="#ad-free"
+                    class="benefit-card">
+
+                    <div class="benefit-icon">
+
+                        <i class="ri-volume-mute-fill"></i>
+
+                    </div>
+
+                    <h3>
+                        Ad-Free Music
+                    </h3>
+
+                    <p>
+                        Just music.
+                        Nothing in the way.
+                    </p>
+
+                    <span>
+                        Explore
+                        <i class="ri-arrow-right-line"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- OFFLINE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a
+                    href="#offline"
+                    class="benefit-card">
+
+                    <div class="benefit-icon">
+
+                        <i class="ri-download-2-fill"></i>
+
+                    </div>
+
+                    <h3>
+                        Offline Listening
+                    </h3>
+
+                    <p>
+                        Take your music
+                        anywhere.
+                    </p>
+
+                    <span>
+                        Explore
+                        <i class="ri-arrow-right-line"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- AUDIO -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a
+                    href="#audio"
+                    class="benefit-card">
+
+                    <div class="benefit-icon">
+
+                        <i class="ri-equalizer-2-fill"></i>
+
+                    </div>
+
+                    <h3>
+                        Premium Audio
+                    </h3>
+
+                    <p>
+                        Hear more from
+                        every track.
+                    </p>
+
+                    <span>
+                        Explore
+                        <i class="ri-arrow-right-line"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- CONTROL -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a
+                    href="#control"
+                    class="benefit-card">
+
+                    <div class="benefit-icon">
+
+                        <i class="ri-play-list-2-fill"></i>
+
+                    </div>
+
+                    <h3>
+                        Unlimited Control
+                    </h3>
+
+                    <p>
+                        Your music.
+                        Your rules.
+                    </p>
+
+                    <span>
+                        Explore
+                        <i class="ri-arrow-right-line"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURE — AD FREE
+========================================================= -->
+
+<section
+    class="premium-feature feature-dark"
+    id="ad-free">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <div class="feature-content">
+
+                    <span>
+                        01 — AD-FREE
+                    </span>
+
+                    <h2>
+                        Just music.
+                        <strong>Nothing in the way.</strong>
+                    </h2>
+
+                    <p>
+                        Enjoy your favorite songs,
+                        playlists and discoveries
+                        without advertising
+                        interrupting your listening.
+                    </p>
+
+                    <a href="#plans">
+                        Get Premium
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="feature-visual ad-feature-visual">
+
+                    <div class="floating-player-card">
+
+                        <i class="ri-volume-mute-fill"></i>
+
+                        <span>
+                            No interruptions
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURE — OFFLINE
+========================================================= -->
+
+<section
+    class="premium-feature"
+    id="offline">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 order-lg-2">
+
+                <div class="feature-content">
+
+                    <span>
+                        02 — OFFLINE LISTENING
+                    </span>
+
+                    <h2>
+                        Your music
+                        <strong>goes with you.</strong>
+                    </h2>
+
+                    <p>
+                        Download your favorite
+                        songs and playlists and
+                        keep listening even when
+                        you're offline.
+                    </p>
+
+                    <a href="#plans">
+                        Get Premium
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 order-lg-1">
+
+                <div class="feature-visual offline-feature-visual">
+
+                    <div class="download-card">
+
+                        <div>
+
+                            <strong>
+                                Last Last
+                            </strong>
+
+                            <span>
+                                Burna Boy
+                            </span>
+
+                        </div>
+
+                        <i class="ri-checkbox-circle-fill"></i>
+
+                    </div>
+
+
+                    <div class="download-card">
+
+                        <div>
+
+                            <strong>
+                                Essence
+                            </strong>
+
+                            <span>
+                                Wizkid
+                            </span>
+
+                        </div>
+
+                        <i class="ri-checkbox-circle-fill"></i>
+
+                    </div>
+
+
+                    <div class="download-card">
+
+                        <div>
+
+                            <strong>
+                                Free Mind
+                            </strong>
+
+                            <span>
+                                Tems
+                            </span>
+
+                        </div>
+
+                        <i class="ri-checkbox-circle-fill"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURE — PREMIUM AUDIO
+========================================================= -->
+
+<section
+    class="premium-feature feature-dark"
+    id="audio">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <div class="feature-content">
+
+                    <span>
+                        03 — PREMIUM AUDIO
+                    </span>
+
+                    <h2>
+                        Hear every
+                        <strong>detail.</strong>
+                    </h2>
+
+                    <p>
+                        Experience your music
+                        with enhanced audio quality
+                        designed to bring greater
+                        clarity and detail to every
+                        track.
+                    </p>
+
+                    <a href="#plans">
+                        Get Premium
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="feature-visual audio-feature-visual">
+
+                    <div class="audio-wave">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="audio-quality">
+
+                        <span>
+                            WAVECRAFT AUDIO
+                        </span>
+
+                        <strong>
+                            PREMIUM
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURE — CONTROL
+========================================================= -->
+
+<section
+    class="premium-feature"
+    id="control">
+
+        <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 order-lg-2">
+
+                <div class="feature-content">
+
+                    <span>
+                        04 — FULL CONTROL
+                    </span>
+
+                    <h2>
+                        Your music.
+                        <strong>Your rules.</strong>
+                    </h2>
+
+                    <p>
+                        Skip, replay, queue and
+                        choose exactly what you
+                        want to hear.
+                    </p>
+
+                    <a href="#plans">
+                        Get Premium
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 order-lg-1">
+
+                <div class="feature-visual control-feature-visual">
+
+                    <div class="control-player">
+
+                        <div class="control-song">
+
+                            <div class="control-image"></div>
+
+                            <div>
+
+                                <strong>
+                                    Last Last
+                                </strong>
+
+                                <span>
+                                    Burna Boy
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="control-buttons">
+
+                            <i class="ri-skip-back-fill"></i>
+
+                            <i class="ri-play-circle-fill"></i>
+
+                            <i class="ri-skip-forward-fill"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WAVECRAFT EXCLUSIVES
+========================================================= -->
+
+<section class="premium-exclusives">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>
+                WAVECRAFT EXCLUSIVE
+            </span>
+
+            <h2>
+                And there's
+                <strong>more.</strong>
+            </h2>
+
+            <p>
+                Premium doesn't stop at
+                ad-free music.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="exclusive-card">
+
+                    <i class="ri-palette-fill"></i>
+
+                    <h3>
+                        Premium Themes
+                    </h3>
+
+                    <p>
+                        Personalize your
+                        WaveCraft experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="exclusive-card">
+
+                    <i class="ri-group-fill"></i>
+
+                    <h3>
+                        WaveCraft Sessions
+                    </h3>
+
+                    <p>
+                        Listen together
+                        with friends.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="exclusive-card">
+
+                    <i class="ri-compass-3-fill"></i>
+
+                    <h3>
+                        Discovery+
+                    </h3>
+
+                    <p>
+                        Discover music
+                        made for you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="exclusive-card">
+
+                    <i class="ri-bar-chart-fill"></i>
+
+                    <h3>
+                        Charts+
+                    </h3>
+
+                    <p>
+                        Explore deeper
+                        WaveCraft charts.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PLANS
+========================================================= -->
+
+<section
+    class="premium-plans"
+    id="plans">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>
+                CHOOSE YOUR PLAN
+            </span>
+
+            <h2>
+                Premium made
+                <strong>for you.</strong>
+            </h2>
+
+            <p>
+                Choose the plan that fits
+                the way you listen.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 justify-content-center">
+
+
+            <!-- INDIVIDUAL -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div
+                    class="upgrade-plan-card"
+                    data-plan="individual">
+
+                    <span class="plan-tag">
+                        INDIVIDUAL
+                    </span>
+
+                    <h3>
+                        Individual
+                    </h3>
+
+                    <p>
+                        For one listener.
+                    </p>
+
+                    <div class="plan-price">
+
+                        <strong>
+                            ₦0
+                        </strong>
+
+                        <span>
+                            for 3 months
+                        </span>
+
+                    </div>
+
+                    <p class="after-price">
+                        ₦1,600/month after
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            1 Premium account
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Ad-free music
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Offline listening
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Unlimited control
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Cancel anytime
+                        </li>
+
+                    </ul>
+
+
+                    <button
+                        class="plan-button"
+                        data-plan-select="individual">
+
+                        Try 3 months for ₦0
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STUDENT -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="upgrade-plan-card featured-plan" data-plan="student">
+
+                    <span class="popular-badge">
+                        MOST POPULAR
+                    </span>
+
+                    <span class="plan-tag">
+                        STUDENT
+                    </span>
+
+                    <h3>
+                        Student
+                    </h3>
+
+                    <p>
+                        For eligible students.
+                    </p>
+
+                    <div class="plan-price">
+
+                        <strong>
+                            ₦0
+                        </strong>
+
+                        <span>
+                            for 1 month
+                        </span>
+
+                    </div>
+
+                    <p class="after-price">
+                        ₦800/month after
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            1 Premium account
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Student discount
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Ad-free music
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Offline listening
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Cancel anytime
+                        </li>
+
+                    </ul>
+
+
+                    <button
+                        class="plan-button"
+                        data-plan-select="student">
+
+                        Try 1 month for ₦0
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DUO -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="upgrade-plan-card" data-plan="duo">
+
+                    <span class="plan-tag">
+                        DUO
+                    </span>
+
+                    <h3>
+                        Duo
+                    </h3>
+
+                    <p>
+                        For two people living together.
+                    </p>
+
+                    <div class="plan-price">
+
+                        <strong>
+                            ₦2,100
+                        </strong>
+
+                        <span>
+                            / month
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            2 Premium accounts
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Separate music libraries
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Ad-free music
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Offline listening
+                        </li>
+
+                        <li>
+                            <i class="ri-check-line"></i>
+                            Cancel anytime
+                        </li>
+
+                    </ul>
+
+
+                    <button class="plan-button" data-plan-select="duo">
+
+                        Get Premium Duo
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PLAN COMPARISON
+========================================================= -->
+
+<section class="plan-comparison">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>
+                COMPARE PLANS
+            </span>
+
+            <h2>
+                Find your
+                <strong>perfect fit.</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="comparison-wrapper">
+
+            <div class="comparison-table">
+
+                <div class="comparison-row comparison-header">
+
+                    <div>
+                        Features
+                    </div>
+
+                    <div>
+                        Individual
+                    </div>
+
+                    <div>
+                        Student
+                    </div>
+
+                    <div>
+                        Duo
+                    </div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Premium account
+                    </div>
+
+                    <div>1</div>
+
+                    <div>1</div>
+
+                    <div>2</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Ad-free music
+                    </div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Offline listening
+                    </div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Unlimited skips
+                    </div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Premium audio
+                    </div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Student discount
+                    </div>
+
+                    <div>—</div>
+
+                    <div>✓</div>
+
+                    <div>—</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Separate libraries
+                    </div>
+
+                    <div>—</div>
+
+                    <div>—</div>
+
+                    <div>✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Cancel anytime
+                    </div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                    <div>✓</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="premium-faq">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>
+                FAQ
+            </span>
+
+            <h2>
+                Frequently asked
+                <strong>questions.</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="faq-container">
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    What is WaveCraft Premium?
+
+                    <i class="ri-add-line"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        WaveCraft Premium gives you
+                        an enhanced listening experience
+                        with features such as ad-free
+                        music, offline listening and
+                        greater playback control.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Can I cancel anytime?
+
+                    <i class="ri-add-line"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. You can cancel your
+                        Premium subscription at any
+                        time.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Can I listen offline?
+
+                    <i class="ri-add-line"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Premium members can download
+                        supported music and playlists
+                        for offline listening.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Can I change my plan later?
+
+                    <i class="ri-add-line"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        You can change your Premium
+                        plan when supported by your
+                        account and subscription.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    What happens if I cancel Premium?
+
+                    <i class="ri-add-line"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Your Premium benefits remain
+                        available until the end of your
+                        current billing period.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="premium-final-cta">
+
+    <div class="premium-cta-overlay"></div>
+
+    <div class="container">
+
+        <div class="premium-cta-content">
+
+            <span>
+                WAVECRAFT PREMIUM
+            </span>
+
+            <h2>
+                Ready to hear
+                <strong>WaveCraft differently?</strong>
+            </h2>
+
+            <p>
+                Your music deserves more than
+                interruptions.
+            </p>
+
+            <a
+                href="#plans"
+                class="premium-primary-btn">
+
+                Get WaveCraft Premium
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- WAVECRAFT FOOTER -->
+
+            <footer class="wavecraft-footer">
+
+                <div class="footer-container">
+
+                    <!-- TOP FOOTER -->
+                    <div class="footer-top">
+
+                        <!-- BRAND -->
+                        <div class="footer-brand">
+
+                            <a href="index.html" class="footer-logo">
+                                WAVE<span>CRAFT</span>
+                            </a>
+
+                            <p>
+                                Discover new music, explore emerging artists,
+                                and enjoy the sounds shaping the world.
+                            </p>
+
+                            <!-- SOCIAL MEDIA -->
+                            <div class="footer-socials">
+
+                                <a href="#" aria-label="Instagram">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+
+                                <a href="#" aria-label="Twitter">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+
+                                <a href="#" aria-label="Facebook">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+
+                                <a href="#" aria-label="YouTube">
+                                    <i class="ri-youtube-fill"></i>
+                                </a>
+
+                                <a href="#" aria-label="TikTok">
+                                    <i class="ri-tiktok-fill"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EXPLORE -->
+                        <div class="footer-column">
+
+                            <h4>Explore</h4>
+
+                            <a href="index.html">Home</a>
+                            <a href="index.html#chart">Charts</a>
+                            <a href="artist.html">Artists</a>
+                            <a href="playlist.html">Playlists</a>
+                            <a href="genres.html">Genres</a>
+
+                        </div>
+
+
+                        <!-- YOUR MUSIC -->
+                        <div class="footer-column">
+
+                            <h4>Your Music</h4>
+
+                            <a href="library.html">Library</a>
+                            <a href="playlist.html">My Playlists</a>
+                            <a href="liked.html">Liked Songs</a>
+                            <a href="history.html">Listening History</a>
+                            <a href="upgrade.html">Premium</a>
+
+                        </div>
+
+
+                        <!-- COMPANY -->
+                        <div class="footer-column">
+
+                            <h4>WaveCraft</h4>
+
+                            <a href="about.html">About Us</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="careers.html">Careers</a>
+                            <a href="help.html">Help Center</a>
+                            <a href="privacy.html">Privacy</a>
+
+                        </div>
+
+
+                        <!-- NEWSLETTER -->
+                        <div class="footer-newsletter">
+
+                            <h4>Stay in the Wave</h4>
+
+                            <p>
+                                Get the latest music, artists and WaveCraft
+                                updates straight to your inbox.
+                            </p>
+
+                            <form class="footer-subscribe">
+
+                                <input type="email" placeholder="Your email address" aria-label="Email address"
+                                    required>
+
+                                <button type="submit">
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIVIDER -->
+                    <div class="footer-divider"></div>
+
+
+                    <!-- BOTTOM -->
+                    <div class="footer-bottom">
+
+                        <p>
+                            © 2026 WaveCraft. All rights reserved.
+                        </p>
+
+                        <div class="footer-legal">
+
+                            <a href="terms.html">
+                                Terms & Conditions
+                            </a>
+
+                            <a href="privacy.html">
+                                Privacy Policy
+                            </a>
+
+                            <a href="cookies.html">
+                                Cookie Policy
+                            </a>
+
+                        </div>
+
+                        <div class="footer-language">
+                            <i class="ri-global-line"></i>
+                            <span>English</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+            <!-- scroll to top button -->
+            <button id="scroll-top">
+                ⬆
+            </button>
+            <!-- end of scroll to top button -->
+
+            <!-- END WAVECRAFT FOOTER -->
+
+    <script src="js/bootstrap.bundle.js"> </script>
+    <script src="myjs/music-player.js"></script>
+    <script src="myjs/upgrade.js"></script>        
+    
+</body>
+</html>

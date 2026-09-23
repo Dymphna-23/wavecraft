@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="icon" href="img/som-choice.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="mycss/setting.css">
+    <link rel="stylesheet" href="mycss/music-player.css">
+</head>
+
+<body>
+
+    <!-- scroll progress bar -->
+    <div class="progress-bar">
+    </div>
+    <!-- end of progress bar -->
+
+
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <button id="menuBtn">
+                ☰
+            </button>
+
+            <div class="nav-logo">
+                <img id="sidebarLogo" src="img/nav-logo-removebg-preview (1).png" alt="WaveCraft logo">
+            </div>
+
+        </div>
+
+        <div class="sidebar-content">
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="genre.html">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>Genres</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <span>Library</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="upgrade.html">
+                        <i class="fa-regular fa-circle-play"></i>
+                        <span>Upgrade</span>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="settings.html">
+                        <i class="ri-settings-5-line"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <button class="playlist-btn">
+                <a href="playlist.html"><i class="fa-solid fa-plus"></i>
+                    Playlist
+                </a>
+            </button>
+
+            <div class="playlists">
+
+                <div class="playlist">
+                    <a href="liked.html"><i class="ri-heart-3-fill"></i>
+                        <h4>Liked Music</h4>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Main Area -->
+    <div class="main-area" id="mainArea">
+
+        <!-- Top Navbar -->
+        <nav>
+
+            <div class="nav-brand" id="navLogoHost">
+            </div>
+
+
+            <div class="right-side">
+
+                <a href="signup.html" id="authLink">
+                    <span id="authText">Sign Up</span>
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+                <!-- USER PROFILE -->
+                <div class="user-profile" id="userProfile">
+
+                    <span id="userInitials"></span>
+
+                </div>
+
+                <button id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <!-- end of nav bar -->
+
+<!-- SETTINGSS CONTENT -->
+        <section class="wc-settings-wrap" aria-label="WaveCraft settings">
+            <header class="wc-settings-hero">
+                <div class="wc-settings-title">
+                    <h1>Settings</h1>
+                    <p>Manage your WaveCraft account, playback and app preferences.</p>
+                </div>
+                <div class="wc-settings-searchbar" role="search">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="text" id="settingsSearch" placeholder="Search settings (try download, theme...)"
+                        autocomplete="off" aria-label="Search settings">
+                    <button id="clearSettingsSearch" class="wc-search-clear" type="button" aria-label="Clear search"
+                        hidden><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </header>
+            <div class="wc-settings-search-meta"><span id="settingsResultCount" aria-live="polite"></span></div>
+            <div class="wc-settings-mobile-nav" id="settingsCategoryNav">
+                <label id="settingsCategoryLabel" for="settingsMobileNav">Settings Category</label>
+                <select id="settingsMobileNav" aria-label="Settings category">
+                    <option value="section-account">Account</option>
+                    <option value="section-playback">Playback</option>
+                    <option value="section-audio">Audio Quality</option>
+                    <option value="section-data">Data Saver</option>
+                    <option value="section-notifications">Notifications</option>
+                    <option value="section-privacy">Privacy and Social</option>
+                    <option value="section-content">Content Preferences</option>
+                    <option value="section-appearance">Appearance</option>
+                    <option value="section-language">Language</option>
+                    <option value="section-downloads">Downloads</option>
+                    <option value="section-storage">Storage</option>
+                    <option value="section-devices">Devices</option>
+                    <option value="section-apps">Connected Apps</option>
+                    <option value="section-accessibility">Accessibility</option>
+                    <option value="section-about">About</option>
+                </select>
+            </div>
+            <div id="settingsNoResults" class="wc-card wc-no-results" hidden>
+                <h3>No settings found</h3>
+                <p>Try download, notification, theme, privacy or audio.</p><button type="button"
+                    id="resetSettingsSearch" class="wc-btn wc-btn-outline">Clear search</button>
+            </div>
+            <div class="wc-settings-layout">
+                <aside class="wc-settings-nav" aria-label="Settings categories">
+                    <button type="button" class="wc-nav-item active" data-target="section-account"><i
+                            class="ri-user-line"></i><span>Account</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-playback"><i
+                            class="ri-play-line"></i><span>Playback</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-audio"><i
+                            class="ri-equalizer-line"></i><span>Audio</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-data"><i
+                            class="ri-database-2-line"></i><span>Data Saver</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-notifications"><i
+                            class="ri-notification-3-line"></i><span>Alerts</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-privacy"><i
+                            class="ri-shield-line"></i><span>Privacy</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-content"><i
+                            class="ri-heart-line"></i><span>Content</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-appearance"><i
+                            class="ri-contrast-line"></i><span>Theme</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-language"><i
+                            class="ri-global-line"></i><span>Language</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-downloads"><i
+                            class="ri-download-line"></i><span>Downloads</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-storage"><i
+                            class="ri-hard-drive-2-line"></i><span>Storage</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-devices"><i
+                            class="ri-smartphone-line"></i><span>Devices</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-apps"><i
+                            class="ri-apps-line"></i><span>Apps</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-accessibility"><i
+                            class="ri-accessibility-line"></i><span>Access</span></button>
+                    <button type="button" class="wc-nav-item" data-target="section-about"><i
+                            class="ri-information-line"></i><span>About</span></button>
+                </aside>
+                <div class="wc-settings-content" id="settingsContent">
+                    <section id="section-account" class="wc-card wc-settings-section" data-category="Account"
+                        data-keywords="account profile user email name password">
+                        <div class="wc-card-head">
+                            <h2>Account</h2>
+                            <p>Manage your WaveCraft profile.</p>
+                        </div>
+                        <div class="wc-account-top">
+                            <div class="wc-avatar" id="accountAvatar">W</div>
+                            <div class="wc-account-info">
+                                <h3 id="accountDisplayName">WaveCraft Listener</h3>
+                                <p id="accountUsername">@wavecraft-user</p>
+                                <p id="accountEmail">you@example.com</p><small id="accountJoined">Member since
+                                    2026</small>
+                            </div>
+                        </div>
+                        <div class="wc-row-actions"><button type="button" class="wc-btn wc-btn-primary"
+                                id="editProfileBtn">Edit Profile</button><button type="button"
+                                class="wc-btn wc-btn-outline" id="changePasswordBtn">Change Password</button></div>
+                    </section>
+
+                    <section id="section-playback" class="wc-card wc-settings-section" data-category="Playback"
+                        data-keywords="playback autoplay gapless crossfade normalize explicit similar">
+                        <div class="wc-card-head">
+                            <h2>Playback</h2>
+                            <p>Control how music plays.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Autoplay" data-desc="Keep playing similar songs"
+                            data-category="Playback">
+                            <div>
+                                <h4>Autoplay</h4>
+                                <p>Keep playing similar songs.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="autoplay" role="switch"
+                                aria-checked="true" aria-label="Autoplay"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Gapless" data-desc="No silence between tracks"
+                            data-category="Playback">
+                            <div>
+                                <h4>Gapless Playback</h4>
+                                <p>Remove silence between tracks.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="gapless" role="switch"
+                                aria-checked="true" aria-label="Gapless"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Crossfade" data-desc="Blend songs together"
+                            data-category="Playback">
+                            <div>
+                                <h4>Crossfade</h4>
+                                <p>Blend songs into each other.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="crossfade" role="switch"
+                                aria-checked="false" aria-label="Crossfade"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Crossfade duration" data-desc="Crossfade seconds"
+                            data-category="Playback">
+                            <div>
+                                <h4>Crossfade duration</h4>
+                                <p><span id="crossfadeValue">5</span> seconds</p>
+                            </div><input type="range" id="crossfadeDuration" min="0" max="12" step="1" value="5"
+                                aria-label="Crossfade duration">
+                        </div>
+                        <div class="wc-setting-row" data-title="Normalize" data-desc="Same volume all songs"
+                            data-category="Playback">
+                            <div>
+                                <h4>Normalize Volume</h4>
+                                <p>Play songs at similar volume.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="normalizeVolume" role="switch"
+                                aria-checked="true" aria-label="Normalize"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Similar songs" data-desc="Recommend tracks"
+                            data-category="Playback">
+                            <div>
+                                <h4>Auto Play Similar Songs</h4>
+                                <p>Queue similar songs.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="autoSimilar" role="switch"
+                                aria-checked="false" aria-label="Similar"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Explicit" data-desc="Allow explicit songs"
+                            data-category="Playback">
+                            <div>
+                                <h4>Explicit Content</h4>
+                                <p>Allow explicit songs.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="explicit" role="switch"
+                                aria-checked="true" aria-label="Explicit"><span></span></button>
+                        </div>
+                    </section>
+                    <section id="section-audio" class="wc-card wc-settings-section" data-category="Audio Quality"
+                        data-keywords="audio quality streaming wifi mobile">
+                        <div class="wc-card-head">
+                            <h2>Audio Quality</h2>
+                            <p>Choose your sound quality.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Streaming quality" data-desc="General streaming quality"
+                            data-category="Audio Quality">
+                            <div>
+                                <h4>Streaming Quality</h4>
+                                <p>General streaming.</p>
+                            </div><select class="wc-select" data-setting="streamingQuality"
+                                aria-label="Streaming quality">
+                                <option value="low">Low</option>
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="very-high">Very High</option>
+                            </select>
+                        </div>
+                        <div class="wc-setting-row" data-title="Download quality" data-desc="Offline quality"
+                            data-category="Audio Quality">
+                            <div>
+                                <h4>Download Quality</h4>
+                                <p>Offline downloads.</p>
+                            </div><select class="wc-select" data-setting="downloadQuality"
+                                aria-label="Download quality">
+                                <option value="low">Low</option>
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="very-high">Very High</option>
+                            </select>
+                        </div>
+                        <div class="wc-setting-row" data-title="Wifi quality" data-desc="Quality on wifi"
+                            data-category="Audio Quality">
+                            <div>
+                                <h4>Wi-Fi Quality</h4>
+                                <p>Applied on Wi-Fi.</p>
+                            </div><select class="wc-select" data-setting="wifiQuality" aria-label="Wifi quality">
+                                <option value="low">Low</option>
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="very-high">Very High</option>
+                            </select>
+                        </div>
+                        <div class="wc-setting-row" data-title="Mobile quality" data-desc="Quality on mobile"
+                            data-category="Audio Quality">
+                            <div>
+                                <h4>Mobile Quality</h4>
+                                <p>Applied on mobile data.</p>
+                            </div><select class="wc-select" data-setting="mobileQuality" aria-label="Mobile quality">
+                                <option value="low">Low</option>
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="very-high">Very High</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section id="section-data" class="wc-card wc-settings-section" data-category="Data Saver"
+                        data-keywords="data saver mobile stream download previews">
+                        <div class="wc-card-head">
+                            <h2>Data Saver</h2>
+                            <p>Reduce data usage.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Data saver" data-desc="Lower data mode"
+                            data-category="Data Saver">
+                            <div>
+                                <h4>Data Saver</h4>
+                                <p>Lower quality and disable previews.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="dataSaver" role="switch"
+                                aria-label="Data saver"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Stream mobile" data-desc="Stream on mobile"
+                            data-category="Data Saver">
+                            <div>
+                                <h4>Stream over Mobile Data</h4>
+                                <p>Allow streaming without Wi-Fi.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="streamMobile" role="switch"
+                                aria-label="Stream mobile"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Download mobile" data-desc="Downloads on mobile"
+                            data-category="Data Saver">
+                            <div>
+                                <h4>Download over Mobile Data</h4>
+                                <p>Allow downloads without Wi-Fi.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="downloadMobile" role="switch"
+                                aria-label="Download mobile"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Previews" data-desc="Autoplay previews"
+                            data-category="Data Saver">
+                            <div>
+                                <h4>Autoplay Previews</h4>
+                                <p>Play previews while browsing.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="autoplayPreviews" role="switch"
+                                aria-label="Previews"><span></span></button>
+                        </div>
+                    </section>
+
+                    <section id="section-notifications" class="wc-card wc-settings-section"
+                        data-category="Notifications"
+                        data-keywords="notifications push email releases artists playlist followers promo weekly">
+                        <div class="wc-card-head">
+                            <h2>Notifications</h2>
+                            <p>Choose what you hear about.</p><button type="button"
+                                class="wc-btn wc-btn-outline wc-small" id="disableAllNotifBtn">Turn off all</button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Push" data-desc="Device push alerts"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Push Notifications</h4>
+                                <p>Alerts on this device.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifPush" role="switch"
+                                aria-label="Push"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Email notif" data-desc="Email updates"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Email Notifications</h4>
+                                <p>Updates by email.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifEmail" role="switch"
+                                aria-label="Email"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Releases" data-desc="New releases"
+                            data-category="Notifications">
+                            <div>
+                                <h4>New Music Releases</h4>
+                                <p>Fresh drops.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifReleases" role="switch"
+                                aria-label="Releases"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Artists" data-desc="Artist news"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Artist Updates</h4>
+                                <p>News from artists.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifArtists" role="switch"
+                                aria-label="Artists"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Playlist updates" data-desc="Playlist changes"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Playlist Updates</h4>
+                                <p>Followed playlist changes.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifPlaylists" role="switch"
+                                aria-label="Playlist updates"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Recommended" data-desc="Suggestions"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Recommended Music</h4>
+                                <p>Picks for you.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifRecommended" role="switch"
+                                aria-label="Recommended"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Followers" data-desc="Follower alerts"
+                            data-category="Notifications">
+                            <div>
+                                <h4>New Followers</h4>
+                                <p>Someone follows you.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifFollowers" role="switch"
+                                aria-label="Followers"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Activity" data-desc="Playlist activity"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Playlist Activity</h4>
+                                <p>Likes and adds.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifActivity" role="switch"
+                                aria-label="Activity"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Promo" data-desc="Offers promos"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Promotional</h4>
+                                <p>Offers and news.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifPromo" role="switch"
+                                aria-label="Promo"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Weekly" data-desc="Weekly recap"
+                            data-category="Notifications">
+                            <div>
+                                <h4>Weekly Summary</h4>
+                                <p>Your week in music.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="notifWeekly" role="switch"
+                                aria-label="Weekly"><span></span></button>
+                        </div>
+                    </section>
+
+                    <section id="section-privacy" class="wc-card wc-settings-section" data-category="Privacy"
+                        data-keywords="privacy social private session listening followers ads history">
+                        <div class="wc-card-head">
+                            <h2>Privacy and Social</h2>
+                            <p>Visibility and data.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Private session" data-desc="Hide listening"
+                            data-category="Privacy">
+                            <div>
+                                <h4>Private Session</h4>
+                                <p>Hide what you play.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="privateSession" role="switch"
+                                aria-label="Private"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Listening activity" data-desc="Share listening"
+                            data-category="Privacy">
+                            <div>
+                                <h4>Listening Activity</h4>
+                                <p>Share with followers.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="listeningActivity" role="switch"
+                                aria-label="Activity"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Recent artists" data-desc="Show recent artists"
+                            data-category="Privacy">
+                            <div>
+                                <h4>Show Recently Played Artists</h4>
+                                <p>On your profile.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="showRecentArtists" role="switch"
+                                aria-label="Recent"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Show playlists" data-desc="Public playlists"
+                            data-category="Privacy">
+                            <div>
+                                <h4>Show Playlists on Profile</h4>
+                                <p>Make playlists visible.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="showPlaylists" role="switch"
+                                aria-label="Playlists"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Followers" data-desc="Allow followers"
+                            data-category="Privacy">
+                            <div>
+                                <h4>Allow Followers</h4>
+                                <p>Let others follow you.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="allowFollowers" role="switch"
+                                aria-label="Followers"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Recommendations" data-desc="Use history"
+                            data-category="Privacy">
+                            <div>
+                                <h4>Personalized Recommendations</h4>
+                                <p>Suggest music for you.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="personalRecs" role="switch"
+                                aria-label="Recommendations"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Ads" data-desc="Relevant ads" data-category="Privacy">
+                            <div>
+                                <h4>Personalized Ads</h4>
+                                <p>Relevant promotions.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="personalAds" role="switch"
+                                aria-label="Ads"><span></span></button>
+                        </div>
+                        <div class="wc-row-actions"><button type="button" class="wc-btn wc-btn-outline"
+                                id="clearListeningBtn">Clear Listening History</button><button type="button"
+                                class="wc-btn wc-btn-outline" id="clearSearchHistoryBtn">Clear Search History</button>
+                        </div>
+                    </section>
+
+                    <section id="section-content" class="wc-card wc-settings-section" data-category="Content"
+                        data-keywords="content genres afrobeats hiphop jazz kpop rock language">
+                        <div class="wc-card-head">
+                            <h2>Content Preferences</h2>
+                            <p>Pick genres you love.</p>
+                        </div>
+                        <div class="wc-genre-grid" id="genreGrid" role="group" aria-label="Genres"></div>
+                        <div class="wc-setting-row" data-title="Music language" data-desc="Language preference"
+                            data-category="Content">
+                            <div>
+                                <h4>Preferred Music Language</h4>
+                                <p>Prioritize this language.</p>
+                            </div><select class="wc-select" data-setting="contentLanguage" aria-label="Music language">
+                                <option>English</option>
+                                <option>French</option>
+                                <option>Spanish</option>
+                                <option>Portuguese</option>
+                                <option>German</option>
+                                <option>Yoruba</option>
+                                <option>Igbo</option>
+                                <option>Hausa</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section id="section-appearance" class="wc-card wc-settings-section" data-category="Appearance"
+                        data-keywords="appearance theme dark light system">
+                        <div class="wc-card-head">
+                            <h2>Appearance</h2>
+                            <p>Uses existing WaveCraft theme.</p>
+                        </div>
+                        <div class="wc-theme-row" role="radiogroup" aria-label="Theme"><button type="button"
+                                class="wc-theme-option" data-theme-value="dark" role="radio">Dark</button><button
+                                type="button" class="wc-theme-option" data-theme-value="light"
+                                role="radio">Light</button><button type="button" class="wc-theme-option"
+                                data-theme-value="system" role="radio">System</button></div>
+                    </section>
+                    <section id="section-language" class="wc-card wc-settings-section" data-category="Language"
+                        data-keywords="language english french spanish portuguese german">
+                        <div class="wc-card-head">
+                            <h2>Language</h2>
+                            <p>App language preference.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="App language" data-desc="Interface language"
+                            data-category="Language">
+                            <div>
+                                <h4>App Language</h4>
+                                <p>Stored for future translation.</p>
+                            </div><select class="wc-select" data-setting="language" aria-label="App language">
+                                <option>English</option>
+                                <option>French</option>
+                                <option>Spanish</option>
+                                <option>Portuguese</option>
+                                <option>German</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section id="section-downloads" class="wc-card wc-settings-section" data-category="Downloads"
+                        data-keywords="downloads wifi automatic audio offline">
+                        <div class="wc-card-head">
+                            <h2>Downloads</h2>
+                            <p>Offline music.</p>
+                            <p class="wc-hint" id="downloadsInfo">No downloads yet.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Wifi only" data-desc="Wifi downloads"
+                            data-category="Downloads">
+                            <div>
+                                <h4>Download over Wi-Fi Only</h4>
+                                <p>Avoid mobile data.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="wifiOnly" role="switch"
+                                aria-label="Wifi only"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Auto downloads" data-desc="Auto download"
+                            data-category="Downloads">
+                            <div>
+                                <h4>Automatic Downloads</h4>
+                                <p>Download follows.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="autoDownloads" role="switch"
+                                aria-label="Auto"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Audio only" data-desc="No videos"
+                            data-category="Downloads">
+                            <div>
+                                <h4>Download Audio Only</h4>
+                                <p>Skip videos.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="audioOnly" role="switch"
+                                aria-label="Audio only"><span></span></button>
+                        </div>
+                        <div class="wc-row-actions"><button type="button" class="wc-btn wc-btn-outline"
+                                id="clearDownloadsBtn">Clear All Downloads</button></div>
+                    </section>
+                    <section id="section-storage" class="wc-card wc-settings-section" data-category="Storage"
+                        data-keywords="storage cache space clear">
+                        <div class="wc-card-head">
+                            <h2>Storage</h2>
+                            <p>Device usage.</p>
+                        </div>
+                        <div class="wc-storage-bars">
+                            <div class="wc-storage-top"><strong id="storageTotal">0 MB</strong><span>total</span></div>
+                            <div class="wc-progress" id="storageBarWrap">
+                                <div class="wc-progress-fill" id="storageBar"></div>
+                            </div>
+                            <div class="wc-storage-list">
+                                <div><span>Music Downloads</span><strong id="storageMusic">0 MB</strong></div>
+                                <div><span>Cached Data</span><strong id="storageCache">0 MB</strong></div>
+                            </div>
+                        </div>
+                        <div class="wc-row-actions"><button type="button" class="wc-btn wc-btn-outline"
+                                id="clearCacheBtn">Clear Cache</button></div>
+                    </section>
+                    <section id="section-devices" class="wc-card wc-settings-section" data-category="Devices"
+                        data-keywords="devices session browser active">
+                        <div class="wc-card-head">
+                            <h2>Devices</h2>
+                            <p>Sessions.</p>
+                        </div>
+                        <div class="wc-device-card">
+                            <div>
+                                <h4>This Device</h4>
+                                <p id="thisDeviceInfo">Current session</p><small>Last active: just now</small>
+                            </div><span class="wc-pill">Active</span>
+                        </div>
+                        <div class="wc-row-actions"><button type="button" class="wc-btn wc-btn-outline"
+                                id="logoutOthersBtn">Log Out Other Devices</button></div>
+                    </section>
+                    <section id="section-apps" class="wc-card wc-settings-section" data-category="Apps"
+                        data-keywords="connected apps google apple facebook connect">
+                        <div class="wc-card-head">
+                            <h2>Connected Apps</h2>
+                            <p>Ready for OAuth later.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Google" data-desc="Google connection"
+                            data-category="Apps">
+                            <div>
+                                <h4>Google</h4>
+                                <p>Sign in with Google.</p>
+                            </div><button type="button" class="wc-btn wc-btn-outline wc-small"
+                                data-app="google">Connect</button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Apple" data-desc="Apple connection"
+                            data-category="Apps">
+                            <div>
+                                <h4>Apple</h4>
+                                <p>Sign in with Apple.</p>
+                            </div><button type="button" class="wc-btn wc-btn-outline wc-small"
+                                data-app="apple">Connect</button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Facebook" data-desc="Facebook connection"
+                            data-category="Apps">
+                            <div>
+                                <h4>Facebook</h4>
+                                <p>Sign in with Facebook.</p>
+                            </div><button type="button" class="wc-btn wc-btn-outline wc-small"
+                                data-app="facebook">Connect</button>
+                        </div>
+                    </section>
+                    <section id="section-accessibility" class="wc-card wc-settings-section"
+                        data-category="Accessibility" data-keywords="accessibility motion text contrast keyboard">
+                        <div class="wc-card-head">
+                            <h2>Accessibility</h2>
+                            <p>Comfort options.</p>
+                        </div>
+                        <div class="wc-setting-row" data-title="Reduce motion" data-desc="Less animation"
+                            data-category="Accessibility">
+                            <div>
+                                <h4>Reduce Motion</h4>
+                                <p>Minimize animation.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="reduceMotion" role="switch"
+                                aria-label="Reduce"><span></span></button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Larger text" data-desc="Bigger text"
+                            data-category="Accessibility">
+                            <div>
+                                <h4>Larger Text</h4>
+                                <p>Increase text size.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="largerText" role="switch"
+                                aria-label="Larger"><span></span></button>
+                        </div>
+
+                        <div class="wc-setting-row" data-title="High contrast" data-desc="Stronger contrast"
+                            data-category="Accessibility">
+                            <div>
+                                <h4>High Contrast</h4>
+                                <p>Stronger contrast.</p>
+                            </div>
+                            
+                            <button type="button" class="wc-toggle" data-setting="highContrast" role="switch"
+                                aria-label="Contrast"><span></span>
+                            </button>
+                        </div>
+                        <div class="wc-setting-row" data-title="Keyboard" data-desc="Keyboard focus"
+                            data-category="Accessibility">
+                            <div>
+                                <h4>Keyboard Navigation</h4>
+                                <p>Visible focus always on.</p>
+                            </div><button type="button" class="wc-toggle" data-setting="keyboardNav" role="switch"
+                                aria-label="Keyboard"><span></span></button>
+                        </div>
+                    </section>
+                    <section id="section-about" class="wc-card wc-settings-section" data-category="About"
+                        data-keywords="about version terms privacy help support licenses">
+                        <div class="wc-card-head">
+                            <h2>About WaveCraft</h2>
+                            <p>WaveCraft Version 1.0.0</p>
+                        </div>
+
+                        <div class="wc-about-links"><a href="terms.html">Terms</a>
+                            <a href="privacy.html">Privacy</a>
+                            <a href="about.html">Guidelines</a>
+                            <a href="help.html">Help</a>
+                            <a href="contact.html">Support</a>
+                            <a href="about.html">Licenses</a>
+                        </div>
+
+                        <div class="wc-row-actions">
+                            <button type="button" class="wc-btn wc-btn-outline" id="logoutBtn">Log Out</button>
+                            <button type="button" class="wc-btn wc-btn-outline" id="resetSettingsBtn">Reset All Settings</button>
+                            <button type="button" class="wc-btn wc-btn-danger" id="deleteAccountBtn">Delete Account</button></div>
+                    </section>
+                </div>
+            </div>
+
+        </section>
+        <div id="wcToastWrap" class="wc-toast-wrap" aria-live="polite"></div>
+
+        <div class="wc-modal" id="modal-editProfile" aria-hidden="true" role="dialog" aria-modal="true"
+            aria-label="Edit profile">
+
+            <div class="wc-modal-card">
+                <div class="wc-modal-head">
+                    <h3>Edit Profile</h3>
+                    <button type="button" class="wc-modal-x" data-close aria-label="Close">X</button>
+                </div>
+                <label>Display name<input type="text" id="editDisplayName" maxlength="40"></label>
+                <label>Username<input type="text" id="editUsername" maxlength="30"></label>
+                <label>Email<input type="email" id="editEmail"></label>
+
+                <p class="wc-error" id="editProfileError"></p>
+
+                <div class="wc-modal-actions">
+                    <button type="button" class="wc-btn wc-btn-outline" data-close>Cancel</button>
+                    <button type="button" class="wc-btn wc-btn-primary" id="saveProfileBtn">Save</button></div>
+            </div>
+
+        </div>
+
+        <div class="wc-modal" id="modal-password" aria-hidden="true" role="dialog" aria-modal="true"
+            aria-label="Change password">
+            <div class="wc-modal-card">
+                <div class="wc-modal-head">
+                    <h3>Change Password</h3><button type="button" class="wc-modal-x" data-close
+                        aria-label="Close">X</button>
+                </div>
+
+                <label>Current password<input type="password" id="currentPassword"></label>
+                <label>New password<input type="password" id="newPassword"></label>
+                <label>Confirm password<input type="password" id="confirmPassword"></label>
+                <p class="wc-error" id="passwordError"></p>
+
+                <div class="wc-modal-actions">
+                    <button type="button" class="wc-btn wc-btn-outline" data-close>Cancel</button>
+                    <button type="button" class="wc-btn wc-btn-primary" id="savePasswordBtn">Update</button>
+                </div>
+            </div>
+          </div>
+
+
+        <div class="wc-modal" id="modal-confirm" aria-hidden="true" role="dialog" aria-modal="true"
+            aria-label="Confirm">
+            <div class="wc-modal-card">
+                <div class="wc-modal-head">
+                    <h3 id="confirmTitle">Are you sure?</h3>
+                    <button type="button" class="wc-modal-x" data-close aria-label="Close">X</button>
+                </div>
+
+                <p id="confirmText">Continue?</p>
+
+                <div class="wc-modal-actions">
+                    <button type="button" class="wc-btn wc-btn-outline" data-close>Cancel</button>
+                    <button type="button" class="wc-btn wc-btn-danger" id="confirmYesBtn">Confirm</button></div>
+            </div>
+        </div>
+
+        <!-- END OF SETTINGS CONTENT -->
+
+
+
+
+        
+        <!-- WAVECRAFT FOOTER -->
+
+        <footer class="wavecraft-footer">
+
+            <div class="footer-container">
+
+                <!-- TOP FOOTER -->
+                <div class="footer-top">
+
+                    <!-- BRAND -->
+                    <div class="footer-brand">
+
+                        <a href="index.html" class="footer-logo">
+                            WAVE<span>CRAFT</span>
+                        </a>
+
+                        <p>
+                            Discover new music, explore emerging artists,
+                            and enjoy the sounds shaping the world.
+                        </p>
+
+                        <!-- SOCIAL MEDIA -->
+                        <div class="footer-socials">
+
+                            <a href="#" aria-label="Instagram">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+
+                            <a href="#" aria-label="Twitter">
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+
+                            <a href="#" aria-label="Facebook">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+
+                            <a href="#" aria-label="YouTube">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+
+                            <a href="#" aria-label="TikTok">
+                                <i class="ri-tiktok-fill"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPLORE -->
+                    <div class="footer-column">
+
+                        <h4>Explore</h4>
+
+                        <a href="index.html">Home</a>
+                        <a href="index.html#chart">Charts</a>
+                        <a href="artist.html">Artists</a>
+                        <a href="playlist.html">Playlists</a>
+                        <a href="genres.html">Genres</a>
+
+                    </div>
+
+
+                    <!-- YOUR MUSIC -->
+                    <div class="footer-column">
+
+                        <h4>Your Music</h4>
+
+                        <a href="library.html">Library</a>
+                        <a href="playlist.html">My Playlists</a>
+                        <a href="liked.html">Liked Songs</a>
+                        <a href="history.html">Listening History</a>
+                        <a href="upgrade.html">Upgrade</a>
+
+                    </div>
+
+
+                    <!-- COMPANY -->
+                    <div class="footer-column">
+
+                        <h4>WaveCraft</h4>
+
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="help.html">Help Center</a>
+                        <a href="privacy.html">Privacy</a>
+
+                    </div>
+
+
+                    <!-- NEWSLETTER -->
+                    <div class="footer-newsletter">
+
+                        <h4>Stay in the Wave</h4>
+
+                        <p>
+                            Get the latest music, artists and WaveCraft
+                            updates straight to your inbox.
+                        </p>
+
+                        <form class="footer-subscribe">
+
+                            <input type="email" placeholder="Your email address" aria-label="Email address" required>
+
+                            <button type="submit">
+                                <i class="ri-arrow-right-line"></i>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIVIDER -->
+                <div class="footer-divider"></div>
+
+
+                <!-- BOTTOM -->
+                <div class="footer-bottom">
+
+                    <p>
+                        © 2026 WaveCraft. All rights reserved.
+                    </p>
+
+                    <div class="footer-legal">
+
+                        <a href="terms.html">
+                            Terms & Conditions
+                        </a>
+
+                        <a href="privacy.html">
+                            Privacy Policy
+                        </a>
+
+                        <a href="cookies.html">
+                            Cookie Policy
+                        </a>
+
+                    </div>
+
+                    <div class="footer-language">
+                        <i class="ri-global-line"></i>
+                        <span>English</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!-- Music Player -->
+        <div id="musicPlayer" class="music-player">
+            <div class="player-song">
+                <img id="playerImage" src="img/" alt="Song">
+                <div>
+                    <h6 id="playerTitle">No song playing</h6>
+                    <small id="playerArtist">WaveCraft</small>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button id="prevBtn" type="button" aria-label="Previous song">
+                    <i class="ri-skip-back-fill"></i>
+                </button>
+                <button id="playPauseBtn" class="play-main" type="button" aria-label="Play or pause">
+                    <i class="ri-play-fill"></i>
+                </button>
+                <button id="nextBtn" type="button" aria-label="Next song">
+                    <i class="ri-skip-forward-fill"></i>
+                </button>
+            </div>
+
+            <div class="player-progress">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" max="100" aria-label="Song progress">
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="player-volume">
+                <i class="ri-volume-up-fill"></i>
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+            </div>
+
+            <button id="closePlayer" class="close-player" type="button" aria-label="Close player">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+
+        <audio id="audioPlayer"></audio>
+
+        <!-- scroll to top button -->
+        <button id="scroll-top">
+            ⬆
+        </button>
+        <!-- end of scroll to top button -->
+
+        <!-- END WAVECRAFT FOOTER -->
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="js/bootstrap.bundle.js"> </script>
+    <script src="myjs/music-player.js"></script>
+    <script src="myjs/settings.js"></script>
+    <script src="myjs/wavecraft-store.js"></script>
+    <script src="myjs/site-bridge.js"></script>
+
+</body>
+
+</html>

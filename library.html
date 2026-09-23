@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="icon" href="img/som-choice.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="mycss/library.css">
+    <link rel="stylesheet" href="mycss/music-player.css">
+</head>
+
+<body>
+
+    <!-- scroll progress bar -->
+    <div class="progress-bar">
+    </div>
+    <!-- end of progress bar -->
+
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <button id="menuBtn">
+                ☰
+            </button>
+
+            <div class="nav-logo">
+                <img id="sidebarLogo" src="img/nav-logo-removebg-preview (1).png" alt="WaveCraft logo">
+            </div>
+
+        </div>
+
+        <div class="sidebar-content">
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="genre.html">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>Genres</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <span>Library</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="upgrade.html">
+                        <i class="fa-regular fa-circle-play"></i>
+                        <span>Upgrade</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        <i class="ri-settings-5-line"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <button class="playlist-btn">
+                <a href="playlist.html"><i class="fa-solid fa-plus"></i>
+                    Playlist
+                </a>
+            </button>
+
+            <div class="playlists">
+
+                <div class="playlist">
+                    <a href="liked.html"><i class="ri-heart-3-fill"></i>
+                        <h4>Liked Music</h4>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Main Area -->
+    <div class="main-area" id="mainArea">
+
+        <!-- Top Navbar -->
+        <nav>
+
+            <div class="nav-brand" id="navLogoHost">
+            </div>
+
+
+            <div class="right-side">
+
+                <a href="signup.html" id="authLink">
+                    <span id="authText">Sign Up</span>
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+                <!-- USER PROFILE -->
+                <div class="user-profile" id="userProfile">
+
+                    <span id="userInitials"></span>
+
+                </div>
+
+                <button id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <!-- end of nav bar -->
+     
+
+        <main class="wc-library-container">
+
+            <!-- LIBRARY HEADER -->
+
+            <header class="wc-library-header">
+
+                <div class="wc-library-brand">
+
+                    <div class="wc-brand-text">
+
+                        <h1>Library</h1>
+
+                        <p>Your personal music collection hub</p>
+
+                    </div>
+
+                </div>
+
+                <div class="wc-library-controls">
+
+                    <div class="wc-library-filters">
+
+                        <button class="wc-filter-btn active" data-filter="all">All</button>
+
+                        <button class="wc-filter-btn" data-filter="playlists">Playlists</button>
+
+                        <button class="wc-filter-btn" data-filter="liked">Liked Music</button>
+
+                        <button class="wc-filter-btn" data-filter="albums">Albums</button>
+
+                        <button class="wc-filter-btn" data-filter="artists">Artists</button>
+
+                    </div>
+
+                    <div class="wc-library-search">
+
+                        <i class="ri-search-line"></i>
+
+                        <input type="search" id="librarySearchInput" placeholder="Search library..." autocomplete="off">
+
+                        <button class="wc-search-clear" id="searchClearBtn" aria-label="Clear search">
+
+                            <i class="ri-close-line"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- LIKED MUSIC CARD -->
+
+            <section class="wc-liked-card-section" id="likedSection">
+
+                <div class="wc-liked-card">
+
+                    <div class="wc-liked-card-image">
+
+                        <div class="wc-liked-glow"></div>
+
+                        <i class="ri-heart-3-fill"></i>
+
+                    </div>
+
+                    <div class="wc-liked-card-info">
+
+                        <div class="wc-card-type">COLLECTION</div>
+
+                        <h2><a href="liked.html">Liked Music</a></h2>
+
+                        <p class="wc-song-count">0 songs</p>
+
+                        <p class="wc-card-description">
+
+                            Music you love, playlists you created,
+
+                            and everything you've saved.
+
+                        </p>
+
+                    </div>
+
+                    <button class="wc-card-play-btn" id="playLikedBtn" aria-label="Play liked music">
+
+                        <i class="ri-play-fill"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- PLAYLISTS SECTION -->
+
+            <section class="wc-playlists-section">
+
+                <div class="wc-playlists-header">
+
+                    <div class="wc-playlists-header-info">
+
+                        <span class="wc-section-label">YOUR COLLECTION</span>
+
+                        <h2>Your Playlists</h2>
+
+                    </div>
+
+                    <div class="wc-playlists-controls">
+
+                        <button class="wc-create-playlist-btn" id="createPlaylistBtn">
+
+                            <i class="ri-add-line"></i>
+
+                            Create Playlist
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="wc-playlist-grid" id="playlistGrid">
+
+                    <!-- Playlist cards will be rendered here by JavaScript -->
+
+                </div>
+
+                <div class="wc-empty-playlists-state" id="emptyPlaylistState" style="display: none;">
+
+                    <div class="wc-empty-icon">
+
+                        <i class="ri-play-list-add-line"></i>
+
+                    </div>
+
+                    <h3>Create your first playlist</h3>
+
+                    <p>Build collections of your favorite songs and discover your own sound.</p>
+
+                    <button class="wc-create-playlist-btn" id="emptyCreatePlaylistBtn">
+
+                        <i class="ri-add-line"></i>
+
+                        Create Playlist
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ALBUMS SECTION -->
+
+            <section class="wc-albums-section wc-coming-section" id="albumsSection">
+
+                <div class="wc-library-section-header">
+
+                    <div>
+
+                        <span class="wc-section-label">SAVED MUSIC</span>
+
+                        <h2>Albums</h2>
+
+                    </div>
+
+                </div>
+
+                <div class="wc-coming-card">
+
+                    <i class="ri-album-line"></i>
+
+                    <h3>Your saved albums will appear here</h3>
+
+                    <p>Save albums from WaveCraft and they will be collected in your Library.</p>
+
+                </div>
+
+            </section>
+
+            <!-- ARTISTS SECTION -->
+
+            <section class="wc-artists-section wc-coming-section" id="artistsSection">
+
+                <div class="wc-library-section-header">
+
+                    <div>
+
+                        <span class="wc-section-label">YOUR ARTISTS</span>
+
+                        <h2>Artists</h2>
+
+                    </div>
+
+                </div>
+
+                <div class="wc-coming-card">
+
+                    <i class="ri-user-star-line"></i>
+
+                    <h3>Your saved artists will appear here</h3>
+
+                    <p>Artists you follow or save will appear in this section.</p>
+
+                </div>
+
+            </section>
+
+        </main>
+<!-- end of library section -->
+
+
+        <!-- WAVECRAFT FOOTER -->
+
+        <footer class="wavecraft-footer">
+
+            <div class="footer-container">
+
+                <!-- TOP FOOTER -->
+                <div class="footer-top">
+
+                    <!-- BRAND -->
+                    <div class="footer-brand">
+
+                        <a href="index.html" class="footer-logo">
+                            WAVE<span>CRAFT</span>
+                        </a>
+
+                        <p>
+                            Discover new music, explore emerging artists,
+                            and enjoy the sounds shaping the world.
+                        </p>
+
+                        <!-- SOCIAL MEDIA -->
+                        <div class="footer-socials">
+
+                            <a href="#" aria-label="Instagram">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+
+                            <a href="#" aria-label="Twitter">
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+
+                            <a href="#" aria-label="Facebook">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+
+                            <a href="#" aria-label="YouTube">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+
+                            <a href="#" aria-label="TikTok">
+                                <i class="ri-tiktok-fill"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPLORE -->
+                    <div class="footer-column">
+
+                        <h4>Explore</h4>
+
+                        <a href="index.html">Home</a>
+                        <a href="index.html#chart">Charts</a>
+                        <a href="artist.html">Artists</a>
+                        <a href="playlist.html">Playlists</a>
+                        <a href="genres.html">Genres</a>
+
+                    </div>
+
+
+                    <!-- YOUR MUSIC -->
+                    <div class="footer-column">
+
+                        <h4>Your Music</h4>
+
+                        <a href="library.html">Library</a>
+                        <a href="playlist.html">My Playlists</a>
+                        <a href="liked.html">Liked Songs</a>
+                        <a href="history.html">Listening History</a>
+                        <a href="upgrade.html">Upgrade</a>
+
+                    </div>
+
+
+                    <!-- COMPANY -->
+                    <div class="footer-column">
+
+                        <h4>WaveCraft</h4>
+
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="help.html">Help Center</a>
+                        <a href="privacy.html">Privacy</a>
+
+                    </div>
+
+
+                    <!-- NEWSLETTER -->
+                    <div class="footer-newsletter">
+
+                        <h4>Stay in the Wave</h4>
+
+                        <p>
+                            Get the latest music, artists and WaveCraft
+                            updates straight to your inbox.
+                        </p>
+
+                        <form class="footer-subscribe">
+
+                            <input type="email" placeholder="Your email address" aria-label="Email address" required>
+
+                            <button type="submit">
+                                <i class="ri-arrow-right-line"></i>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIVIDER -->
+                <div class="footer-divider"></div>
+
+
+                <!-- BOTTOM -->
+                <div class="footer-bottom">
+
+                    <p>
+                        © 2026 WaveCraft. All rights reserved.
+                    </p>
+
+                    <div class="footer-legal">
+
+                        <a href="terms.html">
+                            Terms & Conditions
+                        </a>
+
+                        <a href="privacy.html">
+                            Privacy Policy
+                        </a>
+
+                        <a href="cookies.html">
+                            Cookie Policy
+                        </a>
+
+                    </div>
+
+                    <div class="footer-language">
+                        <i class="ri-global-line"></i>
+                        <span>English</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!-- Music Player -->
+        <div id="musicPlayer" class="music-player">
+            <div class="player-song">
+                <img id="playerImage" src="img/" alt="Song">
+                <div>
+                    <h6 id="playerTitle">No song playing</h6>
+                    <small id="playerArtist">WaveCraft</small>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button id="prevBtn" type="button" aria-label="Previous song">
+                    <i class="ri-skip-back-fill"></i>
+                </button>
+                <button id="playPauseBtn" class="play-main" type="button" aria-label="Play or pause">
+                    <i class="ri-play-fill"></i>
+                </button>
+                <button id="nextBtn" type="button" aria-label="Next song">
+                    <i class="ri-skip-forward-fill"></i>
+                </button>
+            </div>
+
+            <div class="player-progress">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" max="100" aria-label="Song progress">
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="player-volume">
+                <i class="ri-volume-up-fill"></i>
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+            </div>
+
+            <button id="closePlayer" class="close-player" type="button" aria-label="Close player">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+
+        <audio id="audioPlayer"></audio>
+
+        <!-- scroll to top button -->
+        <button id="scroll-top">
+            ⬆
+        </button>
+        <!-- end of scroll to top button -->
+
+        <!-- END WAVECRAFT FOOTER -->
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="js/bootstrap.bundle.js"> </script>
+    <script src="myjs/music-player.js"></script>
+    <script src="myjs/library.js"></script>
+
+</body>
+
+</html>
