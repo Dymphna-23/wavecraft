@@ -681,7 +681,7 @@ body.light #themeBtn:hover{
     align-items: center;
 
     gap: 15px;
-
+    margin-left: 3rem;
     padding: 0 16px;
 
     border-radius: 40px;
@@ -842,7 +842,7 @@ body.light #themeBtn:hover{
     background: #050505;
 
     border: 1px solid rgba(255,255,255,.12);
-
+    margin-left: 3rem;
     border-top: none;
 
     border-radius: 0 0 18px 18px;
@@ -1440,46 +1440,98 @@ body.light .artist-result:hover {
 }
 
 
-/* ============================================
-   WAVECRAFT USER PROFILE
-   ============================================ */
+/* =========================================
+   WAVECRAFT PROFILE BUTTON
+========================================= */
 
-.user-profile {
-    width: 44px;
-    height: 44px;
+#authLink.logged-in {
+
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
 
     border-radius: 50%;
 
-    background: #b89bd4;
+    text-decoration: none;
 
-    display: none;
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "rye";
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* Hover */
+
+#authLink.logged-in:hover {
+
+    transform: scale(1.05);
+
+    border-color: rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 0 20px rgba(178, 34, 34, 0.35);
+}
+
+
+/* Make sure the initials stay centered */
+
+#authLink.logged-in #authText {
+
+    display: flex;
 
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
 
-    border: 4px solid #222;
-
-    box-sizing: border-box;
-
-    transition: 0.3s ease;
+    text-align: center;
 }
 
 
-.user-profile:hover {
-    transform: scale(1.05);
+/* =========================================
+   DARK MODE
+========================================= */
+
+body:not(.light) #authLink.logged-in {
+
+    background: rgba(178, 34, 34, 0.35);
+
+    border-color: rgba(178, 34, 34, 0.8);
+
+    color: #fff;
 }
 
 
-.user-profile span {
-    font-size: 17px;
-    font-weight: 600;
+/* =========================================
+   LIGHT MODE
+========================================= */
 
-    color: #111;
+body.light #authLink.logged-in {
 
-    line-height: 1;
+    background: rgba(255, 255, 255, 0.8);
+
+    border-color: rgba(178, 34, 34, 0.35);
+
+    color: firebrick;
 }
+
 
 /* hero section */
 

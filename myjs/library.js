@@ -1909,6 +1909,123 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// ============================================
+// WAVECRAFT AUTH / PROFILE NAVIGATION
+// ============================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authLink = document.getElementById("authLink");
+    const authText = document.getElementById("authText");
+    const authIcon = document.getElementById("authIcon");
+
+    // Stop if the elements do not exist
+    if (!authLink || !authText) return;
+
+
+    // ============================================
+    // GET SAVED WAVECRAFT USER
+    // ============================================
+
+    const savedUser = localStorage.getItem("wavecraftUser");
+
+
+    // ============================================
+    // USER IS NOT LOGGED IN
+    // ============================================
+
+    if (!savedUser) {
+
+        // Show normal Sign Up link
+        authLink.href = "signup.html";
+
+        authText.textContent = "Sign Up";
+
+        // Show user icon
+        if (authIcon) {
+            authIcon.style.display = "inline-block";
+        }
+
+        // Remove profile styling
+        authLink.classList.remove("logged-in");
+
+        return;
+    }
+
+
+    // ============================================
+    // GET USER DATA
+    // ============================================
+
+    let user;
+
+    try {
+
+        user = JSON.parse(savedUser);
+
+    } catch (error) {
+
+        console.error(
+            "WaveCraft user data is invalid:",
+            error
+        );
+
+        localStorage.removeItem("wavecraftUser");
+
+        authLink.href = "signup.html";
+        authText.textContent = "Sign Up";
+
+        if (authIcon) {
+            authIcon.style.display = "inline-block";
+        }
+
+        return;
+    }
+
+
+    // ============================================
+    // CREATE USER INITIALS
+    // ============================================
+
+    const firstInitial = user.firstName
+        ? user.firstName.charAt(0).toUpperCase()
+        : "";
+
+    const lastInitial = user.lastName
+        ? user.lastName.charAt(0).toUpperCase()
+        : "";
+
+
+    const initials =
+        firstInitial + lastInitial;
+
+
+    // ============================================
+    // CHANGE AUTH LINK INTO PROFILE BUTTON
+    // ============================================
+
+    authText.textContent = initials;
+
+    authLink.href = "profile.html";
+
+
+    // ============================================
+    // HIDE USER ICON
+    // ============================================
+
+    if (authIcon) {
+        authIcon.style.display = "none";
+    }
+
+
+    // ============================================
+    // APPLY PROFILE BUTTON CLASS
+    // ============================================
+
+    authLink.classList.add("logged-in");
+
+});
+
 // NEWSLETTER
 
 const footerSubscribe = document.querySelector(".footer-subscribe");

@@ -646,7 +646,7 @@ body.light {
     color: black;
 }
 
-body.light nav{
+body.light nav {
     background: aliceblue !important;
     border: 3px solid rgba(0, 0, 0, .08);
 }
@@ -804,7 +804,7 @@ body.light #themeBtn:hover {
         padding: 5px 0 0;
     }
 
-    .menu li a i{
+    .menu li a i {
         color: white !important;
     }
 
@@ -820,21 +820,23 @@ body.light #themeBtn:hover {
         border-radius: 14px;
     }
 
-    body.light .sidebar .nav-logo{
-         color: transparent !important;
+    body.light .sidebar .nav-logo {
+        color: transparent !important;
     }
-    .light .sidebar .menu li a span{
-         color: black !important;
+
+    .light .sidebar .menu li a span {
+        color: black !important;
     }
-    .light .sidebar .playlist-btn{
+
+    .light .sidebar .playlist-btn {
         color: transparent !important;
     }
 
 
-    
 
-    .main-area > nav,
-    .main-area > nav.nav-with-logo {
+
+    .main-area>nav,
+    .main-area>nav.nav-with-logo {
         left: 98px;
         right: 14px;
         height: 68px;
@@ -854,6 +856,7 @@ body.light #themeBtn:hover {
 }
 
 @media (max-width: 767px) {
+
     html,
     body {
         width: 100%;
@@ -861,8 +864,8 @@ body.light #themeBtn:hover {
         overflow-x: hidden;
     }
 
-    .main-area > nav,
-    .main-area > nav.nav-with-logo {
+    .main-area>nav,
+    .main-area>nav.nav-with-logo {
         top: 0;
         left: 0;
         right: 0;
@@ -1099,706 +1102,1791 @@ nav.nav-with-logo {
 
 
 
-/* liked page */
-.liked-page {
-    max-width: 1240px;
-    margin: 0 auto;
-}
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
 
-.liked-hero {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    gap: 28px;
-    overflow: hidden;
-    padding: 48px;
-    border-radius: 24px;
-    background: radial-gradient(circle at 10% 20%, rgba(255, 16, 16, .22), transparent 42%), linear-gradient(135deg, #181010, #070707 70%);
-    border: 1px solid rgba(255, 255, 255, .08);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
-}
+.profile-page {
 
-.liked-hero-art {
-    margin-bottom: 2.3rem;
-    width: 170px;
-    height: 170px;
-    display: grid;
-    place-items: center;
-    flex: 0 0 auto;
-    border-radius: 18px;
-    color: #fff;
-    font-size: 74px;
-    background: linear-gradient(145deg, #f52323, #850909);
-    box-shadow: 0 18px 45px rgba(255, 0, 0, .24);
-}
+    min-height: 100vh;
 
-.liked-hero-copy {
-    position: relative;
-    z-index: 1;
-}
-
-.liked-eyebrow {
-    color: #ff3b3b;
-    font: 13px "Rye", serif;
-    letter-spacing: 3px;
-}
-
-.liked-hero h1 {
-    margin: 10px 0;
-    color: #fff;
-    font: 700 clamp(48px, 7vw, 86px) "Rye", serif;
-}
-
-.liked-hero p {
-    margin: 0 0 24px;
-    color: #aaa;
-}
-
-.liked-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.liked-primary-btn,
-.liked-secondary-btn,
-.liked-icon-btn {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 0 18px;
-    border: 1px solid transparent;
-    border-radius: 24px;
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.liked-primary-btn {
-    background: #ff1010;
-    color: #fff;
-}
-
-.liked-secondary-btn {
-    background: rgba(255, 255, 255, .08);
-    color: #fff;
-    border-color: rgba(255, 255, 255, .14);
-}
-
-.liked-icon-btn {
-    width: 44px;
-    padding: 0;
-    background: transparent;
-    color: #fff;
-    border-color: rgba(255, 255, 255, .2);
-    font-size: 20px;
-}
-
-.liked-primary-btn:hover,
-.liked-secondary-btn:hover,
-.liked-icon-btn:hover {
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.liked-library {
-    padding: 48px 0 0;
-}
-
-.liked-toolbar {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 18px;
-}
-
-.liked-toolbar h2 {
-    margin: 0;
-    color: #fff;
-    font: 700 32px "Rye", serif;
-}
-
-.liked-search {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: min(340px, 100%);
-    margin-left: auto;
-    padding: 0 14px;
-    border: 1px solid rgba(255, 255, 255, .12);
-    border-radius: 22px;
-    color: #aaa;
-    background: rgba(255, 255, 255, .05);
-}
-
-.liked-search input {
     width: 100%;
-    height: 42px;
-    border: 0;
-    outline: 0;
-    background: transparent;
+
+    padding-top: 100px;
+
+    padding-left: 285px;
+
+    padding-right: 25px;
+
+    padding-bottom: 150px;
+
     color: #fff;
-}
 
-.liked-search input::placeholder {
-    color: #888;
-}
-
-.liked-sort {
-    border-radius: 1px solid rgb(255, 16, 16, .22);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #999;
-    font-size: 13px;
-}
-
-body.light .liked-sort{
-    color: black;
-}
-
-.liked-sort select {
-    padding: 9px 10px;
-    border: 1px solid rgba(255, 16, 16, .22);
-    border-radius: 8px;
-    background: #151515;
-    color: #fff;
 }
 
 
+/* =========================================================
+   PROFILE HERO
+========================================================= */
 
-.liked-list-header,
-.liked-song {
-    display: grid;
-    grid-template-columns: 34px minmax(220px, 1.6fr) minmax(150px, 1fr) minmax(140px, 1fr) 70px 92px;
-    align-items: center;
-    gap: 14px;
-}
+.profile-hero {
 
-.liked-list-header {
-    /* gap: 14px; */
-    padding: 0 18px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, .12);
-    color: #777;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-body.light .liked-list-header{
-    color: black;
-}
-
-.liked-song {
     position: relative;
-    min-height: 76px;
-    padding: 10px 18px;
-    border-radius: 12px;
-    color: #bbb;
-    transition: background .2s ease;
-}
 
-.liked-song:hover {
-    background: rgba(255, 16, 16, .22);
-}
+    min-height: 330px;
 
-body.light .liked-song:hover {
-    background: rgba(255, 16, 16, .22) !important;
-}
-
-
-.liked-song-number {
-    color: #777;
-}
-
-body.light .liked-song-number {
-    color: black;
-}
-
-.liked-song-main {
-    background: transparent;
-    border: 0;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
-}
 
-.liked-song-art {
-    width: 52px;
-    height: 52px;
-    flex: 0 0 auto;
-    object-fit: cover;
-    border-radius: 8px;
-    background: #222;
-}
+    align-items: flex-end;
 
-.liked-song-title,
-.liked-song-artist {
+    justify-content: space-between;
+
+    padding: 45px;
+
+    margin-bottom: 35px;
+
+    border-radius: 30px;
+
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+
+    background:
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(178, 34, 34, .35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+    backdrop-filter: blur(25px);
+
 }
 
-.liked-song-title {
-    color: #fff;
-    font-weight: 700;
+
+/* Red glow */
+
+.profile-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    right: 5%;
+
+    top: -180px;
+
+    background: rgba(178,34,34,.25);
+
+    filter: blur(90px);
+
+    pointer-events: none;
+
 }
 
-.liked-song-artist {
-    margin-top: 5px;
-    color: #888;
-    font-size: 12px;
-}
 
-body.light .liked-song-artist{
-    color: black;
-}
+/* =========================================================
+   PROFILE INFORMATION
+========================================================= */
 
-.liked-song-actions {
+.profile-info {
+
+    position: relative;
+
+    z-index: 2;
+
     display: flex;
+
     align-items: center;
-    justify-content: flex-end;
-    gap: 7px;
+
+    gap: 35px;
+
 }
 
-.liked-song-actions button {
-    width: 32px;
-    height: 32px;
-    border: 0;
-    background: transparent;
-    color: #999;
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.profile-image-button {
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    width: 200px;
+
+    height: 200px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
     cursor: pointer;
-    font-size: 18px;
+
+    background: #242424;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.45);
+
 }
 
-.liked-song-actions button:hover,
-.liked-song-actions .is-liked {
-    color: #ff1010;
+
+/* actual image */
+
+.profile-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
 }
 
-body.light .liked-song-actions button:hover,
-body.light .liked-song-actions .is-liked {
-    color: #ff1010 !important;
+
+/* default avatar */
+
+.profile-image.default-avatar {
+
+    object-fit: contain;
+
+    padding: 45px;
+
+    opacity: .65;
+
 }
 
-.liked-empty {
-    padding: 70px 20px;
-    text-align: center;
-    color: #999;
-}
 
-.liked-empty i {
-    color: #ff1010;
-    font-size: 56px;
-}
+/* image hover overlay */
 
-.liked-empty h2 {
+.profile-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
     color: #fff;
-    font: 700 30px "Rye", serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    background: rgba(0,0,0,.68);
+
+    opacity: 0;
+
+    transition: .25s ease;
+
 }
 
-.liked-empty .liked-primary-btn {
-    margin-top: 16px;
+
+.profile-image-button:hover
+.profile-image-overlay {
+
+    opacity: 1;
+
 }
 
-body.light .liked-hero {
-    background: radial-gradient(circle at 10% 20%, rgba(178, 34, 34, .16), transparent 42%), #e8f0f4;
-    border-color: rgba(0, 0, 0, .1);
+
+.profile-image-overlay i {
+
+    font-size: 26px;
+
+    color: #fff;
+
 }
 
-body.light .liked-hero h1,
-body.light .liked-toolbar h2,
-body.light .liked-song-title,
-body.light .liked-empty h2 {
-    color: #17202a;
+
+/* =========================================================
+   PROFILE DETAILS
+========================================================= */
+
+.profile-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
 }
 
-body.light .liked-hero p,
-body.light .liked-song,
-body.light .liked-search {
-    color: #52616b;
+
+/* small Profile label */
+
+.profile-label {
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: rgba(255,255,255,.82);
+
 }
 
-body.light .liked-secondary-btn {
-    color: #17202a;
-    background: rgba(255, 255, 255, .75);
-    border-color: rgba(0, 0, 0, .14);
+
+/* =========================================================
+   PROFILE NAME
+========================================================= */
+
+.profile-name-button {
+
+    border: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    text-align: left;
+
 }
 
-body.light .liked-icon-btn {
-    color: #17202a;
-    border-color: rgba(0, 0, 0, .2);
+
+.profile-name-button h1 {
+
+    margin: 0;
+
+    font-family: "Rye", cursive;
+
+    font-size: clamp(55px, 7vw, 110px);
+
+    line-height: .95;
+
+    color: #fff;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 4px 25px rgba(0,0,0,.35);
+
+    transition: .25s ease;
+
 }
 
-body.light .liked-search {
-    background: #fff;
-    border-color: rgba(0, 0, 0, .14);
+
+.profile-name-button:hover h1 {
+
+    color: #f2f2f2;
+
+    transform: translateX(3px);
+
 }
 
-body.light .liked-search input {
-    color: #17202a;
+
+/* =========================================================
+   PLAYLIST COUNT
+========================================================= */
+
+.playlist-count {
+
+    margin: 18px 0 0;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    color: rgba(255,255,255,.72);
+
 }
 
-body.light .liked-sort select {
-    background: #fff;
-    color:black;
-    border-color: rgba(0, 0, 0, .14);
+
+/* =========================================================
+   SETTINGS BUTTON
+========================================================= */
+
+.profile-settings-button {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 52px;
+
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(15px);
+
+    transition: .25s ease;
+
 }
 
-body.light .liked-song:hover {
-    background: rgba(0, 0, 0, .05);
+
+.profile-settings-button:hover {
+
+    color: #fff;
+
+    background: #b22222;
+
+    border-color: #b22222;
+
+    transform: rotate(20deg);
+
+    box-shadow:
+        0 0 25px rgba(178,34,34,.45);
+
 }
+
+
+/* =========================================================
+   PROFILE CONTENT
+========================================================= */
+
+.profile-content {
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+
+}
+
+
+.section-small-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #b22222;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+}
+
+
+/* =========================================================
+   MOST LISTENED GRID
+========================================================= */
+
+.most-listened-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+
+/* =========================================================
+   SONG CARD
+========================================================= */
+
+.profile-song-card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+
+    padding: 13px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.045);
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    backdrop-filter: blur(15px);
+
+    transition: .25s ease;
+
+}
+
+
+.profile-song-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(178,34,34,.45);
+
+    background: rgba(178,34,34,.08);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   SONG IMAGE
+========================================================= */
+
+.profile-song-image {
+
+    width: 72px;
+
+    height: 72px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+}
+
+
+/* =========================================================
+   SONG INFORMATION
+========================================================= */
+
+.profile-song-info {
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.profile-song-title {
+
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    color: #fff;
+
+}
+
+
+.profile-song-artist {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,.55);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.profile-song-play {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #fff;
+
+    background: #b22222;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.profile-song-play:hover {
+
+    background: #d12d2d;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(178,34,34,.5);
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.profile-empty-state {
+
+    padding: 55px 20px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid rgba(255,255,255,.07);
+
+}
+
+
+.profile-empty-state i {
+
+    font-size: 38px;
+
+    color: #b22222;
+
+    margin-bottom: 15px;
+
+}
+
+
+.profile-empty-state h3 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.profile-empty-state p {
+
+    max-width: 450px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,.55);
+
+}
+
+
+/* =========================================================
+   ACCOUNT SECTION
+========================================================= */
+
+.account-section {
+
+    margin-top: 70px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.account-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   ACCOUNT ITEM
+========================================================= */
+
+.account-item {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 16px;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 16px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.035);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: .25s ease;
+
+}
+
+
+.account-item:hover {
+
+    background: rgba(178,34,34,.08);
+
+    border-color: rgba(178,34,34,.35);
+
+}
+
+
+.account-item.active {
+
+    border-color: rgba(178,34,34,.55);
+
+    background: rgba(178,34,34,.10);
+
+}
+
+
+/* account avatar */
+
+.account-avatar {
+
+    width: 52px;
+
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #272727;
+
+    color: #fff;
+
+    font-weight: 700;
+
+}
+
+
+.account-avatar img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.account-information {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.account-name {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.account-email {
+
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,.5);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.account-check {
+
+    color: #b22222;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================================================
+   ADD ACCOUNT
+========================================================= */
+
+.add-account-button {
+
+    margin-top: 12px;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 16px;
+
+    border: 1px dashed rgba(255,255,255,.15);
+
+    border-radius: 16px;
+
+    color: rgba(255,255,255,.75);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.add-account-button:hover {
+
+    color: #fff;
+
+    border-color: #b22222;
+
+    background: rgba(178,34,34,.07);
+
+}
+
+
+.account-add-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.07);
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-section {
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.logout-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 20px;
+
+    border: 1px solid rgba(178,34,34,.4);
+
+    border-radius: 14px;
+
+    color: #fff;
+
+    background: rgba(178,34,34,.08);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.logout-button:hover {
+
+    background: #b22222;
+
+    border-color: #b22222;
+
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.profile-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+
+.profile-modal.active {
+
+    display: flex;
+
+}
+
+
+.profile-modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.72);
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+.profile-modal-box {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(450px, 100%);
+
+    padding: 32px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: rgba(30,30,30,.96);
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.5);
+
+}
+
+
+.modal-close-button {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    color: rgba(255,255,255,.7);
+
+    background: rgba(255,255,255,.07);
+
+    cursor: pointer;
+
+}
+
+
+.modal-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    background: rgba(178,34,34,.16);
+
+    border: 1px solid rgba(178,34,34,.35);
+
+    font-size: 24px;
+
+}
+
+
+.profile-modal-box h2 {
+
+    margin-bottom: 10px;
+
+    font-size: 25px;
+
+}
+
+
+.profile-modal-box > p {
+
+    margin-bottom: 25px;
+
+    color: rgba(255,255,255,.58);
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+========================================================= */
+
+.modal-primary-button,
+.modal-secondary-button,
+.modal-cancel-button {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .25s ease;
+
+}
+
+
+.modal-primary-button {
+
+    color: #fff;
+
+    background: #b22222;
+
+    border: 1px solid #b22222;
+
+}
+
+
+.modal-primary-button:hover {
+
+    background: #d12d2d;
+
+}
+
+
+.modal-secondary-button {
+
+    margin-top: 10px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.10);
+
+}
+
+
+.modal-secondary-button:hover {
+
+    background: rgba(255,255,255,.12);
+
+}
+
+
+.modal-cancel-button {
+
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.65);
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.modal-cancel-button:hover {
+
+    color: #fff;
+
+    background: rgba(255,255,255,.06);
+
+}
+
+
+/* =========================================================
+   USERNAME INPUT
+========================================================= */
+
+.modal-input-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: rgba(255,255,255,.7);
+
+}
+
+
+.profile-modal-input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+}
+
+
+.profile-modal-input:focus {
+
+    border-color: #b22222;
+
+    box-shadow:
+        0 0 0 3px rgba(178,34,34,.12);
+
+}
+
+
+.modal-action-row {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.modal-action-row .modal-cancel-button,
+.modal-action-row .modal-primary-button {
+
+    width: 50%;
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light .profile-page {
+
+    color: #171717;
+
+}
+
+
+body.light .profile-hero {
+
+    background:
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(178,34,34,.15),
+            transparent 35%
+        ),
+        rgba(255,255,255,.72);
+
+    border-color: rgba(0,0,0,.08);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.10);
+
+}
+
+
+body.light .profile-label {
+
+    color: rgba(0,0,0,.65);
+
+}
+
+
+body.light .profile-name-button h1 {
+
+    color: #171717;
+
+}
+
+
+body.light .profile-name-button:hover h1 {
+
+    color: #b22222;
+
+}
+
+
+body.light .playlist-count {
+
+    color: rgba(0,0,0,.58);
+
+}
+
+
+body.light .profile-settings-button {
+
+    color: #222;
+
+    background: rgba(0,0,0,.04);
+
+    border-color: rgba(0,0,0,.10);
+
+}
+
+
+body.light .profile-settings-button:hover {
+
+    color: #fff;
+
+}
+
+
+body.light .section-heading h2 {
+
+    color: #171717;
+
+}
+
+
+body.light .profile-song-card {
+
+    background: rgba(255,255,255,.70);
+
+    border-color: rgba(0,0,0,.08);
+
+}
+
+
+body.light .profile-song-card:hover {
+
+    background: rgba(178,34,34,.05);
+
+}
+
+
+body.light .profile-song-title {
+
+    color: #171717;
+
+}
+
+
+body.light .profile-song-artist {
+
+    color: rgba(0,0,0,.55);
+
+}
+
+
+body.light .account-item {
+
+    color: #171717;
+
+    background: rgba(255,255,255,.65);
+
+    border-color: rgba(0,0,0,.08);
+
+}
+
+
+body.light .account-email {
+
+    color: rgba(0,0,0,.5);
+
+}
+
+
+body.light .add-account-button {
+
+    color: rgba(0,0,0,.65);
+
+    border-color: rgba(0,0,0,.15);
+
+}
+
+
+body.light .logout-button {
+
+    color: #222;
+
+}
+
+
+body.light .profile-modal-box {
+
+    background: rgba(250,250,250,.97);
+
+    color: #171717;
+
+    border-color: rgba(0,0,0,.10);
+
+}
+
+
+body.light .profile-modal-box > p {
+
+    color: rgba(0,0,0,.55);
+
+}
+
+
+body.light .modal-input-label {
+
+    color: rgba(0,0,0,.65);
+
+}
+
+
+body.light .profile-modal-input {
+
+    color: #171717;
+
+    background: rgba(0,0,0,.04);
+
+    border-color: rgba(0,0,0,.10);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .profile-page {
+
+        padding-left: 270px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .profile-hero {
+
+        min-height: 300px;
+
+        padding: 35px;
+
+    }
+
+
+    .profile-image-button {
+
+        width: 165px;
+
+        height: 165px;
+
+    }
+
+
+    .profile-name-button h1 {
+
+        font-size: clamp(48px, 8vw, 82px);
+
+    }
+
+
+    .most-listened-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .profile-page {
+
+        padding-left: 105px;
+
+        padding-top: 95px;
+
+    }
+
+
+    .profile-hero {
+
+        min-height: 280px;
+
+        padding: 28px;
+
+    }
+
+
+    .profile-info {
+
+        gap: 25px;
+
+    }
+
+
+    .profile-image-button {
+
+        width: 145px;
+
+        height: 145px;
+
+    }
+
+
+    .profile-name-button h1 {
+
+        font-size: 55px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
 
 @media (max-width: 767px) {
-    .main-area {
-        margin-left: 0;
-        padding: 78px 12px 140px;
+
+    .profile-page {
+
+        width: 100%;
+
+        padding: 90px 14px 130px;
+
     }
 
-    .liked-hero {
+
+    .profile-hero {
+
+        min-height: 0;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        padding: 25px 18px;
+
+        border-radius: 23px;
+
+    }
+
+
+    .profile-info {
+
+        width: 100%;
+
+        flex-direction: column;
+
         align-items: center;
-        flex-direction: column;
-        padding: 28px 20px;
+
         text-align: center;
+
+        gap: 18px;
+
     }
 
-    .liked-hero-art {
-        width: 130px;
-        height: 130px;
-        font-size: 52px;
+
+    .profile-details {
+
+        align-items: center;
+
+        width: 100%;
+
     }
 
-    .liked-actions {
-        justify-content: center;
+
+    .profile-image-button {
+
+        width: 145px;
+
+        height: 145px;
+
     }
 
-    .liked-toolbar {
-        align-items: stretch;
+
+    .profile-label {
+
+        font-size: 14px;
+
+    }
+
+
+    .profile-name-button {
+
+        text-align: center;
+
+    }
+
+
+    .profile-name-button h1 {
+
+        font-size: clamp(42px, 13vw, 62px);
+
+    }
+
+
+    .playlist-count {
+
+        font-size: 14px;
+
+        margin-top: 12px;
+
+    }
+
+
+    .profile-settings-button {
+
+        position: absolute;
+
+        right: 15px;
+
+        bottom: 15px;
+
+        width: 45px;
+
+        height: 45px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .most-listened-grid {
+
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 12px;
+
+        padding-bottom: 8px;
+
+        scroll-snap-type: x mandatory;
+
+    }
+
+
+    .profile-song-card {
+
+        min-width: 285px;
+
+        scroll-snap-align: start;
+
+    }
+
+
+    .profile-content {
+
+        width: 100%;
+
+    }
+
+
+    .account-section {
+
+        margin-top: 50px;
+
+    }
+
+
+    .profile-modal {
+
+        padding: 14px;
+
+    }
+
+
+    .profile-modal-box {
+
+        padding: 28px 20px;
+
+        border-radius: 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .profile-page {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+    }
+
+
+    .profile-hero {
+
+        padding: 22px 12px;
+
+    }
+
+
+    .profile-image-button {
+
+        width: 125px;
+
+        height: 125px;
+
+    }
+
+
+    .profile-image.default-avatar {
+
+        padding: 30px;
+
+    }
+
+
+    .profile-name-button h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .playlist-count {
+
+        font-size: 13px;
+
+    }
+
+
+    .profile-song-card {
+
+        min-width: 265px;
+
+    }
+
+
+    .profile-song-image {
+
+        width: 65px;
+
+        height: 65px;
+
+    }
+
+
+    .profile-song-play {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .modal-action-row {
+
         flex-direction: column;
+
     }
 
-    .liked-toolbar h2 {
-        font-size: 28px;
+
+    .modal-action-row
+    .modal-cancel-button,
+    .modal-action-row
+    .modal-primary-button {
+
+        width: 100%;
+
     }
 
-    .liked-search {
-        width: auto;
-        margin-left: 0;
-    }
-
-    .liked-sort {
-        justify-content: space-between;
-    }
-
-    .liked-list-header {
-        display: none;
-    }
-
-    .liked-song {
-        grid-template-columns: 1fr 62px;
-        gap: 8px;
-        min-height: 70px;
-        padding: 8px 4px;
-    }
-
-    .liked-song-number,
-    .liked-song-artist,
-    .liked-song-album,
-    .liked-song-duration {
-        display: none;
-    }
-
-    .liked-song-actions {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .liked-song-main {
-        grid-column: 1;
-        grid-row: 1;
-    }
 }
 
-/* Shared WaveCraft sidebar shell for this page. */
-.sidebar {
-    position: fixed;
-    left: 5px;
-    top: 7px;
-    bottom: 20px;
-    width: 260px;
-    padding: 20px;
-    background: rgba(255, 255, 255, .02);
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 1100;
-}
-
-.sidebar-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-#menuBtn {
-    width: 45px;
-    height: 45px;
-    border: 0;
-    background: transparent;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.sidebar .nav-logo {
-    width: 120px;
-}
-
-.sidebar .nav-logo img {
-    width: 100%;
-    display: block;
-}
-
-.sidebar-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.menu {
-    list-style: none;
-    width: 100%;
-    margin: 0;
-    padding: 5px 15px 0;
-}
-
-.menu li {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 12px;
-}
-
-.menu li a {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0 15px;
-    border-radius: 12px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.menu li a:hover,
-.menu li.active a {
-    background: linear-gradient(90deg, rgba(247, 86, 86, .05), rgba(255, 0, 0, .18), rgba(207, 63, 63, .05));
-}
-
-.menu li a i {
-    width: 22px;
-    text-align: center;
-}
-
-.playlist-btn {
-    width: 95%;
-    min-height: 50px;
-    border: 0;
-    border-radius: 30px;
-    background: linear-gradient(90deg, rgba(247, 86, 86, .05), rgba(255, 0, 0, .18), rgba(207, 63, 63, .05));
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.playlist-btn a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.playlist {
-    padding: 15px 0;
-}
-
-.playlist a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 28px;
-    border-radius: 12px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.playlist h4 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.liked-modal-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 12000;
-    display: grid;
-    place-items: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, .72);
-}
-
-.liked-modal {
-    position: relative;
-    width: min(420px, 100%);
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, .14);
-    border-radius: 18px;
-    background: #141414;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, .55);
-}
-
-.liked-modal h2 {
-    margin: 0 0 22px;
-    color: firebrick;
-    font: 700 28px "Rye", serif;
-}
-
-.liked-modal-close {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    border: 0;
-    background: transparent;
-    color: #aaa;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.liked-create-playlist,
-.liked-playlist-options button {
-    width: 100%;
-    min-height: 44px;
-    margin-top: 10px;
-    padding: 0 14px;
-    border: 1px solid rgba(255, 255, 255, .12);
-    border-radius: 9px;
-    background: rgba(255, 255, 255, .06);
-    color: #fff;
-    text-align: left;
-    cursor: pointer;
-}
-
-.liked-create-playlist {
-    border-color: rgba(255, 16, 16, .35);
-    color: #ff3b3b;
-}
-
-.liked-playlist-options p {
-    color: #888;
-}
-
-.liked-more-options {
-    display: grid;
-    gap: 8px;
-}
-
-.liked-more-options button {
-    width: 100%;
-    min-height: 44px;
-    padding: 0 14px;
-    border: 1px solid rgba(255, 255, 255, .1);
-    border-radius: 9px;
-    background: rgba(255, 255, 255, .05);
-    color: #fff;
-    text-align: left;
-    cursor: pointer;
-}
-
-
-.liked-more-options button:hover {
-    border-color: rgba(255, 16, 16, .4);
-    color: #ff3b3b;
-}
-
-body.light .liked-more-options button{
-    color: black !important;
-}
-
-.liked-modal label {
-    display: grid;
-    gap: 7px;
-    margin-top: 14px;
-    color: #aaa;
-    font-size: 13px;
-}
-
-.liked-modal label input {
-    height: 42px;
-    padding: 0 12px;
-    border: 1px solid rgba(255, 255, 255, .14);
-    border-radius: 8px;
-    outline: 0;
-    background: #0d0d0d;
-    color: #fff;
-}
-
-.liked-modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 22px;
-}
-
-.liked-modal-actions .liked-cancel {
-    border: 0;
-    background: transparent;
-    color: #aaa;
-    cursor: pointer;
-}
-
-.liked-no-results {
-    padding: 30px 4px;
-    color: #999;
-}
-
-body.light .liked-modal {
-    background: #fff;
-    border-color: rgba(0, 0, 0, .14);
-}
-
-body.light .liked-modal h2 {
-    color: firebrick;
-}
-
-body.light .liked-modal-close,
-body.light .liked-playlist-options p {
-    color: #131e25;
-}
-
-body.light .liked-playlist-options button {
-    background: #f1f5f7;
-    border-color: rgba(0, 0, 0, .12);
-    color: #17202a;
-}
-
-body.light .liked-modal label {
-    color: #52616b;
-}
-
-body.light .liked-modal label input {
-    background: #f4f7f9;
-    border-color: rgba(0, 0, 0, .14);
-    color: #17202a;
-}
-
-
-/* end of nav bar and side bar */
-
+/* END OF PROFILE  */
 
 
 
@@ -2400,6 +3488,7 @@ body.light .footer-legal a:hover {
 /* PHONE MEDIA QUERY */
 
 @media (max-width: 767px) {
+
     html,
     body {
         width: 100%;
@@ -2471,14 +3560,14 @@ body.light .footer-legal a:hover {
         height: calc(72px + env(safe-area-inset-bottom));
         padding: 0 8px env(safe-area-inset-bottom);
         display: block;
-        background:#000;
+        background: #000;
         border: 0;
         border-top: 1px solid rgba(255, 255, 255, .12);
         border-radius: 0;
         z-index: 99999;
     }
 
-    body.light .sidebar{
+    body.light .sidebar {
         background: whitesmoke;
         color: black;
     }
@@ -2575,6 +3664,7 @@ body.light .footer-legal a:hover {
 
 /* Match index.html tablet sidebar and navbar behavior. */
 @media (min-width: 768px) and (max-width: 1199px) {
+
     .sidebar,
     #sidebar {
         left: 5px !important;
@@ -2603,7 +3693,7 @@ body.light .footer-legal a:hover {
     }
 
     body.light .menu span,
-    body.light .playlist h4{
+    body.light .playlist h4 {
         color: black !important;
     }
 

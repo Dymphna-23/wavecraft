@@ -18,65 +18,126 @@
 
 <body>
 
-    <!-- Main Website -->
+  <!-- scroll progress bar -->
+    <div class="progress-bar">
+    </div>
+    <!-- end of progress bar -->
 
-    <div id="main-content" class="wc-pl-page">
 
-        <!-- Sidebar (same WaveCraft sidebar as Library) -->
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <button id="menuBtn" aria-label="Toggle menu">☰</button>
-                <div class="nav-logo">
-                    <img id="sidebarLogo" src="img/nav-logo-removebg-preview (1).png" alt="WaveCraft logo">
-                </div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <button id="menuBtn">
+                ☰
+            </button>
+
+            <div class="nav-logo">
+                <img id="sidebarLogo" src="img/nav-logo-removebg-preview (1).png" alt="WaveCraft logo">
             </div>
-            <div class="sidebar-content">
-                <ul class="menu">
-                    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                    <li><a href="genre.html"><i class="fa-regular fa-compass"></i><span>Genres</span></a></li>
-                    <li class="active"><a href="library.html"><i
-                                class="fa-regular fa-bookmark"></i><span>Library</span></a></li>
-                    <li><a href="upgrade.html"><i class="fa-regular fa-circle-play"></i><span>Upgrade</span></a></li>
-                    <li><a href="settings.html"><i class="ri-settings-5-line"></i><span>Settings</span></a></li>
-                </ul>
-                <button class="playlist-btn" id="sidebarCreateBtn"><i
-                        class="fa-solid fa-plus"></i><span>Playlist</span></button>
-                <div class="playlists">
-                    <div class="playlist"><a href="playlist.html?id=liked"><i class="ri-heart-3-fill"></i>
-                            <h4>Liked Music</h4>
-                        </a></div>
-                    <div class="sidebar-playlists" id="sidebarPlaylistList"></div>
-                </div>
-            </div>
+
         </div>
 
-        <div class="main-area" id="mainArea">
+        <div class="sidebar-content">
 
-            <!-- scroll progress bar -->
-            <div class="progress-bar">
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="genre.html">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>Genres</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <span>Library</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="upgrade.html">
+                        <i class="fa-regular fa-circle-play"></i>
+                        <span>Upgrade</span>
+                    </a>
+                </li>
+
+                <li>
+                        <a href="settings.html">
+                            <i class="ri-settings-5-line"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+
+
+
+            </ul>
+
+            <button class="playlist-btn">
+                <a href="playlist.html"><i class="fa-solid fa-plus"></i>
+                    Playlist
+                </a>
+            </button>
+
+            <div class="playlists">
+
+                <div class="playlist">
+                    <a class="active" href="liked.html"><i class="ri-heart-3-fill"></i>
+                        <h4>Liked Music</h4>
+                    </a>
+                </div>
+
             </div>
-            <!-- end of progress bar -->
+
+        </div>
+
+    </div>
+
+    <!-- Main Area -->
+    <div class="main-area" id="mainArea">
+
+        <!-- Top Navbar -->
+        <nav>
+
+            <div class="nav-brand" id="navLogoHost">
+            </div>
 
 
-            <nav>
+            <div class="right-side">
 
-                <div class="nav-brand" id="navLogoHost">
-                    <img id="navLogoImg" src="img/nav-logo-removebg-preview (1).png" alt="WaveCraft logo">
+              <a href="signup.html" id="authLink">
+                       <span id="authText">Sign Up</span>
+                       <i class="fa-solid fa-user" id="authIcon"></i>
+                    </a>
+
+                <!-- USER PROFILE -->
+                <div class="user-profile" id="userProfile">
+
+                    <span id="userInitials"></span>
+
                 </div>
 
-                <div class="right-side">
+                <button id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
 
-                    <a href="#" class="profile-btn" aria-label="Profile"><i class="fa-solid fa-user"></i></a>
+            </div>
 
-                    <button id="themeBtn" aria-label="Toggle theme">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
+        </nav>
 
 
-                </div>
+        <!-- end of nav bar -->
 
-            </nav>
-            <!-- end of nav bar -->
+
 
             <!-- Reusable playlist template mounts here -->
             <div id="wcPlaylistDetailHost"></div>

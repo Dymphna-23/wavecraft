@@ -347,6 +347,123 @@ window.addEventListener("load", updateProgressBar);
 
 // End Of Progress Bar
 
+// ============================================
+// WAVECRAFT AUTH / PROFILE NAVIGATION
+// ============================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authLink = document.getElementById("authLink");
+    const authText = document.getElementById("authText");
+    const authIcon = document.getElementById("authIcon");
+
+    // Stop if the elements do not exist
+    if (!authLink || !authText) return;
+
+
+    // ============================================
+    // GET SAVED WAVECRAFT USER
+    // ============================================
+
+    const savedUser = localStorage.getItem("wavecraftUser");
+
+
+    // ============================================
+    // USER IS NOT LOGGED IN
+    // ============================================
+
+    if (!savedUser) {
+
+        // Show normal Sign Up link
+        authLink.href = "signup.html";
+
+        authText.textContent = "Sign Up";
+
+        // Show user icon
+        if (authIcon) {
+            authIcon.style.display = "inline-block";
+        }
+
+        // Remove profile styling
+        authLink.classList.remove("logged-in");
+
+        return;
+    }
+
+
+    // ============================================
+    // GET USER DATA
+    // ============================================
+
+    let user;
+
+    try {
+
+        user = JSON.parse(savedUser);
+
+    } catch (error) {
+
+        console.error(
+            "WaveCraft user data is invalid:",
+            error
+        );
+
+        localStorage.removeItem("wavecraftUser");
+
+        authLink.href = "signup.html";
+        authText.textContent = "Sign Up";
+
+        if (authIcon) {
+            authIcon.style.display = "inline-block";
+        }
+
+        return;
+    }
+
+
+    // ============================================
+    // CREATE USER INITIALS
+    // ============================================
+
+    const firstInitial = user.firstName
+        ? user.firstName.charAt(0).toUpperCase()
+        : "";
+
+    const lastInitial = user.lastName
+        ? user.lastName.charAt(0).toUpperCase()
+        : "";
+
+
+    const initials =
+        firstInitial + lastInitial;
+
+
+    // ============================================
+    // CHANGE AUTH LINK INTO PROFILE BUTTON
+    // ============================================
+
+    authText.textContent = initials;
+
+    authLink.href = "profile.html";
+
+
+    // ============================================
+    // HIDE USER ICON
+    // ============================================
+
+    if (authIcon) {
+        authIcon.style.display = "none";
+    }
+
+
+    // ============================================
+    // APPLY PROFILE BUTTON CLASS
+    // ============================================
+
+    authLink.classList.add("logged-in");
+
+});
+
 /* reusable playlist page: reads ?id=, renders hero + song rows */
 (function () {
     function r(f) { if (document.readyState !== "loading") f(); else document.addEventListener("DOMContentLoaded", f); }
@@ -562,6 +679,7 @@ window.addEventListener("load", updateProgressBar);
             acts.appendChild(nb); md.appendChild(acts); o.appendChild(md); o.classList.add("show");
             o.addEventListener("click", function (e) { if (e.target === o) o.classList.remove("show"); });
         };
+
         window.wcOpenCreate = function (preset, after) {
             if (!S) return; var o = window.wcOverlay("wcCreateOverlay"); o.textContent = "";
             var md = document.createElement("div"); md.className = "wc-modal"; md.setAttribute("role", "dialog"); md.setAttribute("aria-modal", "true");
@@ -600,34 +718,36 @@ window.addEventListener("load", updateProgressBar);
 })();
 
 
-        // cover upload injection into create modal whenever it opens
-        var obs = new MutationObserver(function () {
-            var o = document.getElementById("wcCreateOverlay"); if (!o || !o.classList.contains("show")) return;
-            var form = o.querySelector("form"); if (!form || form.dataset.wcCover) return; form.dataset.wcCover = "1";
-            var w = document.createElement("div"); w.className = "wc-field";
-            var lab = document.createElement("label"); lab.textContent = "Playlist Cover"; w.appendChild(lab);
-            var pick = document.createElement("div"); pick.className = "wc-cover-pick";
-            var prev = document.createElement("img"); prev.className = "wc-cover-preview";
-            prev.src = "img/nav-logo-removebg-preview (1).png"; prev.alt = "Playlist cover preview";
-            var file = document.createElement("input"); file.type = "file"; file.accept = "image/*";
-            file.setAttribute("aria-label", "Upload playlist cover"); file.style.cssText = "font-size:12px;max-width:220px";
-            var url = ""; file.addEventListener("change", function () {
-                var fl = file.files && file.files[0]; if (!fl) return;
-                if (fl.size > 1500000) { if (window.wcToast) window.wcToast("Image too large (max 1.5MB)"); file.value = ""; return; }
-                var rd = new FileReader(); rd.onload = function () { url = String(rd.result || ""); prev.src = url; }; rd.readAsDataURL(fl);
-            });
-            pick.appendChild(prev); pick.appendChild(file); w.appendChild(pick);
-            var acts = form.querySelector(".wc-modal-actions"); form.insertBefore(w, acts);
-            form.addEventListener("submit", function () {
-                if (!url) return; try {
-                    var raw = localStorage.getItem("wavecraftPlaylists"); var pls = raw ? JSON.parse(raw) : [];
-                    if (pls.length) { pls[0].artwork = url; localStorage.setItem("wavecraftPlaylists", JSON.stringify(pls)); }
-                } catch (e) { }
-            }, true);
-        });
-        obs.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+// cover upload injection into create modal whenever it opens
+var obs = new MutationObserver(function () {
+    var o = document.getElementById("wcCreateOverlay"); if (!o || !o.classList.contains("show")) return;
+    var form = o.querySelector("form"); if (!form || form.dataset.wcCover) return; form.dataset.wcCover = "1";
+    var w = document.createElement("div"); w.className = "wc-field";
+    var lab = document.createElement("label"); lab.textContent = "Playlist Cover"; w.appendChild(lab);
+    var pick = document.createElement("div"); pick.className = "wc-cover-pick";
+    var prev = document.createElement("img"); prev.className = "wc-cover-preview";
+    prev.src = "img/nav-logo-removebg-preview (1).png"; prev.alt = "Playlist cover preview";
+    var file = document.createElement("input"); file.type = "file"; file.accept = "image/*";
+    file.setAttribute("aria-label", "Upload playlist cover");
+    file.style.cssText = "font-size:12px;max-width:220px";
+    var url = ""; file.addEventListener("change", function () {
+        var fl = file.files && file.files[0]; if (!fl) return;
+        if (fl.size > 1500000) { if (window.wcToast) window.wcToast("Image too large (max 1.5MB)"); file.value = ""; return; }
+        var rd = new FileReader(); rd.onload = function () { url = String(rd.result || ""); prev.src = url; }; rd.readAsDataURL(fl);
     });
-})();
+    pick.appendChild(prev); pick.appendChild(file); w.appendChild(pick);
+    var acts = form.querySelector(".wc-modal-actions"); form.insertBefore(w, acts);
+    form.addEventListener("submit", function () {
+        if (!url) return; try {
+            var raw = localStorage.getItem("wavecraftPlaylists"); var pls = raw ? JSON.parse(raw) : [];
+            if (pls.length) { pls[0].artwork = url; localStorage.setItem("wavecraftPlaylists", JSON.stringify(pls)); }
+        } catch (e) { }
+    }, true);
+});
+obs.observe(document.body, {
+    childList: true, subtree: true, attributes: true, attributeFilter:
+        ["class"]
+});
 
 
 // NEWSLETTER

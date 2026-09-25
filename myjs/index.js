@@ -282,7 +282,217 @@ if (themeBtn) {
 }
 // end of intro video
 
+// PRE-LOADER
+// =====================================================
+// WAVECRAFT INTRO VIDEO — PLAY ONLY ONCE
+// =====================================================
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const preloader = document.getElementById("preloader");
+    const introVideo = document.getElementById("intro-video");
+
+    // -------------------------------------------------
+    // Stop if the elements do not exist
+    // -------------------------------------------------
+
+    if (!preloader || !introVideo) {
+        return;
+    }
+
+
+    // =================================================
+    // STORAGE KEY
+    // =================================================
+
+    const INTRO_STORAGE_KEY = "wavecraftIntroPlayed";
+
+
+    // =================================================
+    // CHECK IF INTRO HAS ALREADY PLAYED
+    // =================================================
+
+    const introAlreadyPlayed =
+        localStorage.getItem(INTRO_STORAGE_KEY);
+
+
+    // =================================================
+    // IF ALREADY PLAYED
+    // SKIP INTRO COMPLETELY
+    // =================================================
+
+    if (introAlreadyPlayed === "true") {
+
+        preloader.classList.add("hide");
+
+        // Make sure video does not continue playing
+        introVideo.pause();
+
+        return;
+    }
+
+
+    // =================================================
+    // FIRST VISIT
+    // SHOW AND PREPARE INTRO
+    // =================================================
+
+    preloader.classList.remove("hide");
+
+    introVideo.muted = true;
+    introVideo.autoplay = true;
+    introVideo.playsInline = true;
+    introVideo.preload = "auto";
+
+
+    // =================================================
+    // FINISH INTRO
+    // =================================================
+
+    function finishIntro() {
+
+        // Prevent this function from running repeatedly
+        if (localStorage.getItem(INTRO_STORAGE_KEY) === "true") {
+            return;
+        }
+
+
+        // Remember that the intro has played
+        localStorage.setItem(
+            INTRO_STORAGE_KEY,
+            "true"
+        );
+
+
+        // Stop video
+        introVideo.pause();
+
+
+        // Hide preloader
+        preloader.classList.add("hide");
+
+    }
+
+
+    // =================================================
+    // VIDEO FINISHED
+    // =================================================
+
+    introVideo.addEventListener(
+        "ended",
+        finishIntro,
+        { once: true }
+    );
+
+
+    // =================================================
+    // VIDEO ERROR
+    // =================================================
+
+    introVideo.addEventListener(
+        "error",
+        function () {
+
+            console.error(
+                "WaveCraft intro video could not be loaded."
+            );
+
+            // Do NOT mark as played if the video failed.
+            // This allows it to try again next time.
+            preloader.classList.add("hide");
+
+        },
+        { once: true }
+    );
+
+
+    // =================================================
+    // PLAY VIDEO
+    // =================================================
+
+    const playIntro = () => {
+
+        introVideo.play()
+            .then(() => {
+
+                console.log(
+                    "WaveCraft intro video started."
+                );
+
+            })
+            .catch(error => {
+
+                console.warn(
+                    "WaveCraft intro video could not autoplay:",
+                    error
+                );
+
+                // Don't leave the website stuck
+                preloader.classList.add("hide");
+
+            });
+
+    };
+
+
+    // =================================================
+    // WAIT UNTIL VIDEO IS READY
+    // =================================================
+
+    if (introVideo.readyState >= 2) {
+
+        playIntro();
+
+    } else {
+
+        introVideo.addEventListener(
+            "canplay",
+            playIntro,
+            { once: true }
+        );
+
+        introVideo.load();
+
+    }
+
+
+    // =================================================
+    // SAFETY TIMEOUT
+    // =================================================
+
+    // If something goes wrong and the video never
+    // finishes, don't leave the website stuck.
+
+    setTimeout(function () {
+
+        if (
+            localStorage.getItem(
+                INTRO_STORAGE_KEY
+            ) !== "true"
+        ) {
+
+            console.warn(
+                "WaveCraft intro timeout."
+            );
+
+            // Mark as played after timeout so the
+            // user is not forced to see a broken intro
+            // repeatedly.
+
+            localStorage.setItem(
+                INTRO_STORAGE_KEY,
+                "true"
+            );
+
+            introVideo.pause();
+
+            preloader.classList.add("hide");
+        }
+
+    }, 10000);
+
+});
+// END OF PRE-LOADER
 
 
 // SCROLL PROGRESS BAR
@@ -403,69 +613,77 @@ phoneLayout.addEventListener("change", syncPhoneNavigation);
 // END OF MENU TOGGLE
 
 
-// SIGNUP
-const authLink = document.getElementById("authLink");
-const authText = document.getElementById("authText");
-
-const user = JSON.parse(localStorage.getItem("wavecraftUser"));
-
-if (user) {
-    const firstInitial = user.firstName.charAt(0).toUpperCase();
-    const lastInitial = user.lastName.charAt(0).toUpperCase();
-
-    authText.textContent = firstInitial + lastInitial;
-
-    authLink.href = "profile.html";
-}
-// END OF SIGN UP
-
 // ============================================
-// WAVECRAFT USER PROFILE
+// WAVECRAFT AUTH / PROFILE NAVIGATION
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const signupLink = document.getElementById("signupLink");
-    const userProfile = document.getElementById("userProfile");
-    const userInitials = document.getElementById("userInitials");
+    const authLink = document.getElementById("authLink");
+    const authText = document.getElementById("authText");
+    const authIcon = document.getElementById("authIcon");
 
-    // Get saved WaveCraft user
+    // Stop if the elements do not exist
+    if (!authLink || !authText) return;
+
+
+    // ============================================
+    // GET SAVED WAVECRAFT USER
+    // ============================================
+
     const savedUser = localStorage.getItem("wavecraftUser");
 
-    // If no user is logged in
+
+    // ============================================
+    // USER IS NOT LOGGED IN
+    // ============================================
+
     if (!savedUser) {
 
-        if (signupLink) {
-            signupLink.style.display = "flex";
+        // Show normal Sign Up link
+        authLink.href = "signup.html";
+
+        authText.textContent = "Sign Up";
+
+        // Show user icon
+        if (authIcon) {
+            authIcon.style.display = "inline-block";
         }
 
-        if (userProfile) {
-            userProfile.style.display = "none";
-        }
+        // Remove profile styling
+        authLink.classList.remove("logged-in");
 
         return;
     }
 
 
-    // Convert saved data back into an object
-    const user = JSON.parse(savedUser);
-
-
     // ============================================
-    // HIDE SIGN UP
+    // GET USER DATA
     // ============================================
 
-    if (signupLink) {
-        signupLink.style.display = "none";
-    }
+    let user;
 
+    try {
 
-    // ============================================
-    // SHOW PROFILE
-    // ============================================
+        user = JSON.parse(savedUser);
 
-    if (userProfile) {
-        userProfile.style.display = "flex";
+    } catch (error) {
+
+        console.error(
+            "WaveCraft user data is invalid:",
+            error
+        );
+
+        localStorage.removeItem("wavecraftUser");
+
+        authLink.href = "signup.html";
+        authText.textContent = "Sign Up";
+
+        if (authIcon) {
+            authIcon.style.display = "inline-block";
+        }
+
+        return;
     }
 
 
@@ -473,22 +691,45 @@ document.addEventListener("DOMContentLoaded", function () {
     // CREATE USER INITIALS
     // ============================================
 
-    if (userInitials) {
+    const firstInitial = user.firstName
+        ? user.firstName.charAt(0).toUpperCase()
+        : "";
 
-        const firstInitial = user.firstName
-            ? user.firstName.charAt(0)
-            : "";
+    const lastInitial = user.lastName
+        ? user.lastName.charAt(0).toUpperCase()
+        : "";
 
-        const lastInitial = user.lastName
-            ? user.lastName.charAt(0)
-            : "";
 
-        userInitials.textContent =
-            (firstInitial + lastInitial).toUpperCase();
+    const initials =
+        firstInitial + lastInitial;
+
+
+    // ============================================
+    // CHANGE AUTH LINK INTO PROFILE BUTTON
+    // ============================================
+
+    authText.textContent = initials;
+
+    authLink.href = "profile.html";
+
+
+    // ============================================
+    // HIDE USER ICON
+    // ============================================
+
+    if (authIcon) {
+        authIcon.style.display = "none";
     }
 
-});
 
+    // ============================================
+    // APPLY PROFILE BUTTON CLASS
+    // ============================================
+
+    authLink.classList.add("logged-in");
+
+});
+// end of sign up profile
 
 // HERO SECTION CAROUSEL
 const slides = document.querySelectorAll(".carousel-item");
