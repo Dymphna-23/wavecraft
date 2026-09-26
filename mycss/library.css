@@ -1458,8 +1458,6 @@ nav.nav-with-logo {
 
 .wc-liked-card-info h2 {
     margin: 0 0 8px;
-
-    color: #fff;
     font-family: "rye";
     font-size: clamp(28px, 3vw, 42px);
     font-weight: 800;
@@ -1470,6 +1468,10 @@ nav.nav-with-logo {
 .wc-liked-card-info h2 a{
     text-decoration: none;
     color: #fff;
+}
+
+body.light .wc-liked-card-info h2 a{
+    color: black !important;
 }
 
 .wc-song-count {
